@@ -1,0 +1,47 @@
+body#homepage {
+    height: 100%;
+}
+
+#home {
+    height: calc(100% - var(--header-height));
+    justify-content: center;
+    align-items: center;
+    grid-gap: 96px;
+    background-image: url("../../images/image_processing20211125-21609-wvuae.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #FCF5ED78;
+    background-blend-mode: lighten;
+}
+
+#home form {
+    width: 336px;
+}
+
+#home form label {
+    margin-bottom: 4px;
+}
+
+#home form input#login {
+    margin-bottom: 48px;
+}
+
+#home form input[type="login"] {
+    margin-bottom: 48px;
+}
+
+#home form input[type="submit"] {
+    margin-top: 72px;
+    width: 156px;
+    border-radius: 0;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: #D9B589;
+    background-color: var(--primary-color);
+    color: var(--broken-white);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+}
