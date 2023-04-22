@@ -13,8 +13,4 @@ public class IndexServlet extends HttpServlet {
         response.sendRedirect("/home");
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }
