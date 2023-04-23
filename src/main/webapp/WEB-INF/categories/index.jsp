@@ -22,15 +22,12 @@
       <h1 class="text-center my-5">Catégories</h1>
       <div class="square-grid my-3 py-5">
         <div class="square text-center d-flex justify-content-center align-items-center"><img src="../../images/plus-sign.svg" alt="ajouter une catégorie"></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Cafés</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Chocolaterie</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Boissons</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Spécialités <br> salées</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Epices</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Condiments</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Gâteaux <br>& douceurs</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Thés <br>& infusions</p></div>
-        <div class="square text-center d-flex justify-content-center align-items-center"><p>Fruits secs</p></div>
+
+        <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+        <c:forEach items="${categories}" var="category">
+        <div class="square text-center d-flex justify-content-center align-items-center"><p>${category.name}</p></div>
+        </c:forEach>
+
       </div>
     </div>
   </div>
