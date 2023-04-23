@@ -20,16 +20,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous" defer></script>
 </head>
 
-<body id="categories" class="pb-5">
+<body id="categories" class="position-relative pb-5">
 
 <c:import url="../header/" />
 
-<div class="container">
+<div class="container pb-5">
   <div class="row flex-column justify-content-center">
     <div class="col d-flex flex-column justify-content-around">
       <h1 class="text-center my-5">Catégories</h1>
-      <div class="square-grid mt-3">
-        <div class="square text-center d-flex justify-content-center align-items-center"><p></p></div>
+      <div class="square-grid my-3 pb-5">
+        <div class="square text-center d-flex justify-content-center align-items-center"><img src="../../images/plus-sign.svg" alt="ajouter une catégorie"></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Cafés</p></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Chocolaterie</p></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Boissons</p></div>
@@ -40,8 +40,15 @@
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Thés <br>& infusions</p></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Fruits secs</p></div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid position-absolute bottom-0">
+  <div class="row">
+    <div class="col">
       <a href="products" class="underline-none">
-        <button class="button d-block mx-auto">Tous les produits</button>
+        <button class="button d-block mx-auto my-5">Tous les produits</button>
       </a>
     </div>
   </div>

@@ -5,20 +5,24 @@
     grid-gap: 32px;
 }
 
+.square-grid img {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.square-grid > div:first-child:hover img {
+    opacity: 1;
+}
+
 .square {
     width: 184px;
     height: 184px;
     background-color: var(--secondary-color-light);
-    border-width: 0 1px 1px 0;
+    border-width: 1px;
     border-style: solid;
-    border-color: rgba(30, 30, 30, 0.53);
-    /*box-shadow:
-            inset 2px 2px 2px rgba(0, 0, 0, 0.1),
-            inset -4px -4px 8px rgba(0, 0, 0, 0.1),
-            inset 2px 2px 2px rgba(255, 255, 255, 0.1),
-            inset 4px 4px 8px rgba(255, 255, 255, 0.1);*/
+    border-color: var(--grey-0) var(--grey-3) var(--grey-3) var(--grey-0);
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
 }
 
 .square:hover {
@@ -26,5 +30,5 @@
 }
 
 #categories-li {
-    border-bottom: 1px solid var(--secondary-color-medium);
+    border-bottom: 1px solid var(--secondary-color-dark);
 }

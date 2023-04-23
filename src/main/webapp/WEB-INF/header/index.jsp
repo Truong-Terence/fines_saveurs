@@ -16,7 +16,7 @@
 
 <body>
 
-    <div class="container-fluid sticky-top bg-beige">
+    <div class="container-fluid fixed-top bg-beige">
         <div class="row">
             <div class="col">
 

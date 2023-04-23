@@ -13,6 +13,7 @@ body#homepage {
 }
 
 #homepage form input[type="submit"] {
+    margin-top: 72px;
     min-width: 156px;
     width: fit-content;
     padding-left: 16px;
