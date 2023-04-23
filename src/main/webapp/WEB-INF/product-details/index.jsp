@@ -87,12 +87,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <a href="products" class="underline-none">
-                                <button class="button d-block my-5">Editer</button>
+                            <a href="#" class="underline-none">
+                                <button class="button d-block my-5">Éditer</button>
                             </a>
                         </div>
                         <div class="col">
-                            <a href="products" class="underline-none">
+                            <a href="#" class="underline-none">
                                 <button class="button d-block ms-auto my-5">Supprimer</button>
                             </a>
                         </div>
