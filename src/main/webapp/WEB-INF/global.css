@@ -58,6 +58,15 @@ h1 {
     height: 36px;
 }
 
+.button:hover {
+    background-color: var(--accent-color-dark);
+    transition: 0.3s;
+}
+
+.underline-none {
+    text-decoration: none;
+}
+
 /* Forms */
 input {
     height: 32px;

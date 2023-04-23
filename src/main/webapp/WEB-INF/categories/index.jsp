@@ -40,7 +40,9 @@
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Thés <br>& infusions</p></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Fruits secs</p></div>
       </div>
-      <button class="button d-block mx-auto">Tous les produits</button>
+      <a href="products" class="underline-none">
+        <button class="button d-block mx-auto">Tous les produits</button>
+      </a>
     </div>
   </div>
 </div>
