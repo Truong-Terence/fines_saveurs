@@ -28,7 +28,7 @@
   <div class="row flex-column justify-content-center">
     <div class="col d-flex flex-column justify-content-around">
       <h1 class="text-center my-5">Catégories</h1>
-      <div class="square-grid my-3 pb-5">
+      <div class="square-grid my-3 py-5">
         <div class="square text-center d-flex justify-content-center align-items-center"><img src="../../images/plus-sign.svg" alt="ajouter une catégorie"></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Cafés</p></div>
         <div class="square text-center d-flex justify-content-center align-items-center"><p>Chocolaterie</p></div>
