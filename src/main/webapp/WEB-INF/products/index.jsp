@@ -31,7 +31,7 @@
 <div class="container">
     <div class="row my-5">
         <div class="col" id="breadcrumb">
-            <p class="mb-0">Produits <span>></span> Tous les produits</p>
+            <p class="mb-0">Catégories <span>></span> Tous les produits</p>
         </div>
     </div>
 
@@ -56,13 +56,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -73,13 +73,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -90,13 +90,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -107,13 +107,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -124,13 +124,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -141,13 +141,13 @@
 
             <div class="product-card">
                 <div class="col-left">
-                    <p class="uppercase bold smaller">Tablette chocolat grand cru</p>
+                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
                     <p class="bold">Valrhona</p>
                     <p>Ref. XXXXX</p>
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
+                        <p class="mb-0"><a href="product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>

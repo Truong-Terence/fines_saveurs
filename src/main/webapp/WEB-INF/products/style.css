@@ -48,7 +48,7 @@
 }
 
 .product-card .col-right img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #products #grid-products {
@@ -66,13 +66,6 @@
     padding-left: 2px;
     padding-right: 2px;
     cursor: pointer;
-}
-
-#products .aligned p a {
-    font-size: smaller;
-    text-transform: uppercase;
-    color: white;
-    font-weight: 600;
 }
 
 #products .aligned p:first-child:hover {

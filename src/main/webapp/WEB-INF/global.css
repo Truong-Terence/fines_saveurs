@@ -82,8 +82,12 @@ h1 {
     font-weight: bold;
 }
 
+.small {
+    font-size: 95%;
+}
+
 .smaller {
-    font-size: small;
+    font-size: 85%;
 }
 
 /* Forms */
