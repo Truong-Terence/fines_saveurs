@@ -32,7 +32,6 @@ html {
 
 body {
     color: var(--primary-color-dark);
-    background-color: var(--secondary-color-dark);
     padding-top: var(--header-height);
 }
 
