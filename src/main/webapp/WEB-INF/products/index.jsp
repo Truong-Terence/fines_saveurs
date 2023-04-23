@@ -62,7 +62,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -79,7 +79,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                     <p>10 €</p>
                     <p>100 gr.</p>
                     <div class="aligned">
-                        <p class="mb-0">Détails</p>
+                        <p class="mb-0"><a href="product-details" class="underline-none">Détails</a></p>
                         <p class="mb-0">Stock : 10</p>
                     </div>
                 </div>

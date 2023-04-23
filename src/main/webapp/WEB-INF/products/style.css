@@ -62,13 +62,16 @@
 }
 
 #products .aligned p:first-child {
-    font-size: smaller;
-    text-transform: uppercase;
     background-color: var(--primary-color-light);
-    color: white;
     padding-left: 2px;
     padding-right: 2px;
     cursor: pointer;
+}
+
+#products .aligned p a {
+    font-size: smaller;
+    text-transform: uppercase;
+    color: white;
     font-weight: 600;
 }
 
