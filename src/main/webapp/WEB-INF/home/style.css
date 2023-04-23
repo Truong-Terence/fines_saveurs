@@ -7,18 +7,14 @@ body#homepage {
     background-blend-mode: lighten;
 }
 
-#homepage form input[type="submit"] {
-    margin-top: 72px;
-    width: 156px;
-    background-color: var(--primary-color);
-    color: var(--broken-white);
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    letter-spacing: 0.1rem;
-    cursor: pointer;
-}
-
 #homepage form input {
     width: 100%;
     max-width: 500px;
+}
+
+#homepage form input[type="submit"] {
+    min-width: 156px;
+    width: fit-content;
+    padding-left: 16px;
+    padding-right: 16px;
 }

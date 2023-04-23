@@ -37,7 +37,7 @@
                     <input name="" type="email" id="login">
                     <label for="password" class="mt-5 mb-1">Mot de passe</label>
                     <input name="" type="password" id="password" class="mb-5">
-                    <input type="submit" value="Se connecter" class="block-center d-block m-auto mt-5">
+                    <input type="submit" value="Se connecter" class="block-center d-block m-auto mt-5 button">
                 </form>
 
             </div>

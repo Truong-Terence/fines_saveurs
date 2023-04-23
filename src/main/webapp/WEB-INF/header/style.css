@@ -5,7 +5,7 @@ nav {
 nav a {
     font-family: var(--font-serif);
     font-size: 1.5rem !important;
-    color: var(--primary-color) !important;
+    color: var(--primary-color-dark) !important;
 }
 
 .header {

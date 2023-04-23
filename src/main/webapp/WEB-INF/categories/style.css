@@ -1,0 +1,21 @@
+.square-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 184px);
+    justify-content: space-between;
+    grid-gap: 32px;
+}
+
+.square {
+    width: 184px;
+    height: 184px;
+    background-color: var(--secondary-color-light);
+    border-width: 0 1px 1px 0;
+    border-style: solid;
+    border-color: rgba(30, 30, 30, 0.2);
+    box-shadow:
+            inset 2px 2px 2px rgba(0, 0, 0, 0.1),
+            inset -4px -4px 8px rgba(0, 0, 0, 0.1),
+            inset 2px 2px 2px rgba(255, 255, 255, 0.1),
+            inset 4px 4px 8px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
