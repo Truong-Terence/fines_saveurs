@@ -1,22 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<style><%@include file="style.css"%></style>
 
-<!DOCTYPE html>
-
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%@include file="../../styling/import-styles.jsp"%>
-    <style>
-        <%@include file="../../styling/global.css" %>
-        <%@include file="style.css"%>
-    </style>
-</head>
-
-
-<body>
 
     <div class="container-fluid fixed-top bg-beige">
         <div class="row">
@@ -32,7 +15,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li class="nav-item ms-3" id="categories-li">
-                                        <a class="nav-link" href="categories">Catégories</a>
+                                        <a class="nav-link" href="categories">Cat&eacute;gories</a>
                                     </li>
                                     <li class="nav-item ms-3" id="products-li">
                                         <a class="nav-link" href="products">Produits</a>
