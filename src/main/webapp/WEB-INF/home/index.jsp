@@ -17,7 +17,7 @@
 </head>
 
 
-<body id="homepage" class="overflow-hidden">
+<body id="homepage">
 
     <c:import url="../header/" />
 

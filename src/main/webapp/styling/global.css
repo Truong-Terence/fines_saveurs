@@ -31,13 +31,14 @@ html {
 }
 
 body {
+    height: 100%;
     color: var(--primary-color-dark);
     padding-top: var(--header-height);
 }
 
-h1 {
+h1, h2, h3 {
+    font-size: revert;
     font-family: var(--font-serif);
-    font-size: 4rem;
     color: var(--primary-color-dark);
     text-shadow: 1px 0px 0px rgba(252, 245, 237, 0.3);
 }
