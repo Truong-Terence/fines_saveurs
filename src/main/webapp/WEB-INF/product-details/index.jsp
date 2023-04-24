@@ -25,7 +25,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col">
-                    <h2 class="text-center">Fiche produit</h2>
+                    <h1 class="text-center">Fiche produit</h1>
                 </div>
             </div>
         </div>
