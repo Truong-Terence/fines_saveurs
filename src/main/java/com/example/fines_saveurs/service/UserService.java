@@ -1,4 +1,4 @@
-package service;
+package com.example.fines_saveurs.service;
 
 import com.example.fines_saveurs.dao.UserDao;
 import com.example.fines_saveurs.dao.UserJdbcDao;
