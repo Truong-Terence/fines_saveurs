@@ -10,7 +10,6 @@ import java.util.Properties;
 
 public abstract class DataBase {
     private static Connection INSTANCE;
-//    TODO https://www.editions-eni.fr/open/mediabook.aspx?idR=88521626f29b9f7b8a4481050727b07e
 //    TODO retirer credentials de github
     public static Connection getConnection() {
         if (INSTANCE == null) {

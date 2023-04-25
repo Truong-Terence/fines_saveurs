@@ -17,9 +17,7 @@ public class CategoryServlet extends HttpServlet {
         List<Category> categories = CategoryDao.findAll();
         request.setAttribute("categories", categories);
 
-
         request.getRequestDispatcher("/WEB-INF/categories/").forward(request, response);
     }
-
 
 }
