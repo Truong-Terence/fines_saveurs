@@ -1,4 +1,4 @@
-package com.example.fines_saveurs;
+package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.dao.CategoryDao;
 import com.example.fines_saveurs.model.Category;

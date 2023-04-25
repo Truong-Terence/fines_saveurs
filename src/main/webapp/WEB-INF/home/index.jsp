@@ -1,9 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
-<html>
+<!DOCTYPE html>
+
+<html lang="fr">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fines Saveurs | Administration</title>
     <%@include file="../../styling/import-styles.jsp"%>
     <style>
@@ -13,7 +17,7 @@
 </head>
 
 
-<body id="homepage" class="overflow-hidden">
+<body id="homepage">
 
     <c:import url="../header/" />
 
