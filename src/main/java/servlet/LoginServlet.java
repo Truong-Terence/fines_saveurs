@@ -10,9 +10,9 @@ import service.UserService;
 
 import java.io.IOException;
 
-@WebServlet(name = "LoginServlet", value = "/home")
+@WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    public static final String LOGIN_JSP = "/WEB-INF/home";
+    private static final String LOGIN_JSP = "/WEB-INF/home";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(LOGIN_JSP).forward(req, resp);
