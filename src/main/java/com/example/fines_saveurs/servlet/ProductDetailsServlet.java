@@ -1,4 +1,4 @@
-package com.example.fines_saveurs;
+package com.example.fines_saveurs.servlet;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

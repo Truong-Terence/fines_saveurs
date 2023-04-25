@@ -1,4 +1,4 @@
-package com.example.fines_saveurs;
+package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.dao.CategoryDao;
 import com.example.fines_saveurs.model.Category;
@@ -17,9 +17,7 @@ public class CategoryServlet extends HttpServlet {
         List<Category> categories = CategoryDao.findAll();
         request.setAttribute("categories", categories);
 
-
         request.getRequestDispatcher("/WEB-INF/categories/").forward(request, response);
     }
-
 
 }
