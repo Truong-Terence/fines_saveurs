@@ -12,7 +12,7 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private static final String LOGIN_JSP = "/WEB-INF/categories";
+    private static final String LOGIN_JSP = "/WEB-INF/categories/index.jsp";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(LOGIN_JSP).forward(req, resp);
