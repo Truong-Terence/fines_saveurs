@@ -1,0 +1,34 @@
+.square-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 184px);
+    justify-content: space-between;
+    grid-gap: 32px;
+}
+
+.square-grid img {
+    opacity: 0.6;
+    transition: 0.2s;
+}
+
+.square-grid > div:first-child:hover img {
+    opacity: 1;
+}
+
+.square {
+    width: 184px;
+    height: 184px;
+    background-color: var(--secondary-color-light);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--grey-0) var(--grey-3) var(--grey-3) var(--grey-0);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.square:hover {
+    background-color: var(--secondary-color-medium);
+}
+
+#categories-li {
+    border-bottom: 1px solid var(--secondary-color-dark);
+}

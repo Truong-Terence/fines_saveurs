@@ -1,4 +1,4 @@
-package com.example.fines_saveurs;
+package servlet;
 
 import java.io.*;
 

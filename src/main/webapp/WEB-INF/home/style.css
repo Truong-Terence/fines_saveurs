@@ -1,0 +1,21 @@
+body#homepage {
+    background: url("../../images/image_processing20211125-21609-wvuae.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: #FCF5ED78;
+    background-blend-mode: lighten;
+}
+
+#homepage form input {
+    width: 100%;
+    max-width: 500px;
+}
+
+#homepage form input[type="submit"] {
+    margin-top: 72px;
+    min-width: 156px;
+    width: fit-content;
+    padding-left: 16px;
+    padding-right: 16px;
+}
