@@ -27,7 +27,7 @@
 
                 <h1 class="text-center mb-5">Espace sécurisé</h1>
 
-                <form action="#" method="post" class="text-center mt-5">
+                <form action="login" method="post" class="text-center mt-5">
                     <label for="login" class="mb-1">Identifiant</label>
                     <input name="" type="email" id="login">
                     <label for="password" class="mt-5 mb-1">Mot de passe</label>

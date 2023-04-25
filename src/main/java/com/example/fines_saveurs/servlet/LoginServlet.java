@@ -6,13 +6,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import com.example.fines_saveurs.service.UserService;
+import com.example.fines_saveurs.service.AdminService;
 
 import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private static final String LOGIN_JSP = "/WEB-INF/home";
+    private static final String LOGIN_JSP = "/WEB-INF/categories";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(LOGIN_JSP).forward(req, resp);
@@ -22,8 +22,8 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        UserService userService = new UserService();
-        boolean isLogged = userService.login(email, password);
+        AdminService adminService = new AdminService();
+        boolean isLogged = adminService.login(email, password);
         if(isLogged){
             HttpSession session = req.getSession();
             session.setAttribute("email", email);
