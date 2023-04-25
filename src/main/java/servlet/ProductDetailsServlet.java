@@ -1,4 +1,4 @@
-package com.example.fines_saveurs;
+package servlet;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -6,11 +6,10 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "IndexServlet", value = "/")
-public class IndexServlet extends HttpServlet {
+@WebServlet(name = "ProductDetailsServlet", value = "/product-details")
+public class ProductDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/home");
+        request.getRequestDispatcher("/WEB-INF/product-details/").forward(request, response);
     }
-
 }
