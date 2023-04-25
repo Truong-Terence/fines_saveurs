@@ -1,13 +1,13 @@
 package com.example.fines_saveurs.model;
 
-public class User {
+public class Admin {
     private Long id;
 
     private String email;
 
     private String password;
 
-    public User(Long id, String email, String password) {
+    public Admin(Long id, String email, String password) {
         this.id = id;
         this.email = email ;
         this.password = password;

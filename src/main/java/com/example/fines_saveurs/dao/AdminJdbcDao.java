@@ -1,6 +1,6 @@
 package com.example.fines_saveurs.dao;
 
-import com.example.fines_saveurs.model.User;
+import com.example.fines_saveurs.model.Admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,43 +8,43 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class UserJdbcDao implements UserDao{
+public class AdminJdbcDao implements AdminDao {
     @Override
-    public boolean create(User entity) {
+    public boolean create(Admin entity) {
         throw new RuntimeException();
     }
 
     @Override
-    public List<User> findAll() {
+    public List<Admin> findAll() {
         throw new RuntimeException();
     }
 
     @Override
-    public User findById(Long aLong) {
+    public Admin findById(Long aLong) {
         throw new RuntimeException();
     }
 
     @Override
-    public void update(User entity) {
+    public void update(Admin entity) {
         throw new RuntimeException();
     }
 
     @Override
-    public void delete(User entity) {
+    public void delete(Admin entity) {
         throw new RuntimeException();
     }
 
     @Override
-    public User findByEmail (String email) {
+    public Admin findByEmail (String email) {
         Connection connection = DataBase.getConnection();
         String query = "SELECT id, email, password FROM admin WHERE email=?";
-        User userFound = null;
+        Admin adminFound = null;
 
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, email);
             ResultSet result = pst.executeQuery();
             if (result.next()) {
-                userFound = new User(
+                adminFound = new Admin(
                         result.getLong("id"),
                         result.getString("email"),
                         result.getString("password")
@@ -53,6 +53,6 @@ public class UserJdbcDao implements UserDao{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return userFound;
+        return adminFound;
     }
 }
