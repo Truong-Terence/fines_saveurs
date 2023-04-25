@@ -9,16 +9,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fines Saveurs | Produits</title>
-    <%@include file="../../styling/import-styles.jsp"%>
+    <%@include file="../styling/import-styles.jsp"%>
     <style>
-        <%@include file="../../styling/global.css"%>
-        <%@include file="style.css"%>
+        <%@include file="../styling/global.css"%>
+        <%@include file="../styling/products.css"%>
     </style>
 </head>
 
 <body id="products" class="pb-5">
 
-<c:import url="../header/"/>
+<c:import url="header.jsp"/>
 
 <div class="container">
     <div class="row my-5">
@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 

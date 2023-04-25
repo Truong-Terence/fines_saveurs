@@ -10,6 +10,6 @@ import java.io.IOException;
 public class ProductDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/product-details/").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/product-details.jsp").forward(request, response);
     }
 }

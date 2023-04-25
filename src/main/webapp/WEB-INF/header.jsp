@@ -1,4 +1,4 @@
-<style><%@include file="style.css"%></style>
+<style><%@include file="../styling/header.css"%></style>
 
 
     <div class="container-fluid fixed-top bg-beige">
