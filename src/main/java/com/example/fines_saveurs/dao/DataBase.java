@@ -20,7 +20,6 @@ public abstract class DataBase {
                 Properties appProps = new Properties();
                 appProps.load(new FileInputStream(appConfigPath));
 
-
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 INSTANCE = DriverManager.getConnection(appProps.getProperty("bdd_url"), appProps.getProperty("bdd_user"), appProps.getProperty("bdd_password"));
             } catch (SQLException | ClassNotFoundException | IOException e) {
