@@ -1,4 +1,6 @@
-<style><%@include file="style.css"%></style>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
+<style><%@include file="../styling/header.css"%></style>
 
 
     <div class="container-fluid fixed-top bg-beige">
@@ -15,11 +17,18 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                     <li class="nav-item ms-3" id="categories-li">
-                                        <a class="nav-link" href="categories">Cat&eacute;gories</a>
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/secured/categories">Cat&eacute;gories</a>
                                     </li>
                                     <li class="nav-item ms-3" id="products-li">
-                                        <a class="nav-link" href="products">Produits</a>
+                                        <a class="nav-link" href="${pageContext.request.contextPath}/secured/products">Produits</a>
                                     </li>
+                                    <c:if test="${not empty sessionScope.email}">
+                                        <li class="nav-item ms-3" id="logout-li">
+                                            <a href="${pageContext.request.contextPath}/logout" class="underline-none">
+                                                <button class="button-outline d-block ms-5 my-0">Se d&eacute;connecter</button>
+                                            </a>
+                                        </li>
+                                    </c:if>
                                 </ul>
                             </div>
                         </div>

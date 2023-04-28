@@ -37,7 +37,9 @@ public class AdminJdbcDao implements AdminDao {
     @Override
     public Admin findByEmail (String email) {
         Connection connection = DataBase.getConnection();
+
         String query = "SELECT id_admin, email, password FROM admin WHERE email=?";
+
         Admin adminFound = null;
 
         try (PreparedStatement pst = connection.prepareStatement(query)) {
@@ -46,6 +48,7 @@ public class AdminJdbcDao implements AdminDao {
             if (result.next()) {
                 adminFound = new Admin(
                         result.getLong("id_admin"),
+
                         result.getString("email"),
                         result.getString("password")
                 );

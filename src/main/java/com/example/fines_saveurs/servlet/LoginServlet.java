@@ -12,7 +12,9 @@ import java.io.IOException;
 
 @WebServlet(name = "LoginServlet", value = "/login")
 public class LoginServlet extends HttpServlet {
-    private static final String LOGIN_JSP = "/WEB-INF/categories/index.jsp";
+
+    private static final String LOGIN_JSP = "/WEB-INF/categories.jsp";
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher(LOGIN_JSP).forward(req, resp);
@@ -24,11 +26,11 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         AdminService adminService = new AdminService();
         boolean isLogged = adminService.login(email, password);
-        if(isLogged){
+        if (isLogged) {
             HttpSession session = req.getSession();
             session.setAttribute("email", email);
-            resp.sendRedirect(req.getContextPath() + ProductsServlet.URL);
-        }else {
+            resp.sendRedirect(req.getContextPath() + "/secured/products");
+        } else {
             req.setAttribute("login_error", true);
             req.getRequestDispatcher(LOGIN_JSP).forward(req, resp);
         }

@@ -9,17 +9,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Fines Saveurs | Administration</title>
-    <%@include file="../../styling/import-styles.jsp"%>
+    <%@include file="../styling/import-styles.jsp"%>
     <style>
-        <%@include file="../../styling/global.css"%>
-        <%@include file="style.css"%>
+        <%@include file="../styling/global.css"%>
+        <%@include file="../styling/home.css"%>
     </style>
 </head>
 
 
 <body id="homepage">
 
-    <c:import url="../header/" />
+    <c:import url="header.jsp" />
 
     <div class="container h-100">
         <div class="row h-100">
