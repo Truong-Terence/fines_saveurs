@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CategoryServlet", value = "/categories")
+@WebServlet(name = "CategoryServlet", value = "/secured/categories")
 public class CategoryServlet extends HttpServlet {
 
     @Override
@@ -17,7 +17,8 @@ public class CategoryServlet extends HttpServlet {
         List<Category> categories = CategoryDao.findAll();
         request.setAttribute("categories", categories);
 
-        request.getRequestDispatcher("/WEB-INF/categories/").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/categories.jsp").forward(request, response);
     }
 
 }
+

@@ -13,7 +13,7 @@
 #products input[type="submit"] {
     width: 32px;
     height: 32px;
-    background-image: url("../../images/healthicons_magnifying-glass-outline.svg");
+    background-image: url("../images/healthicons_magnifying-glass-outline.svg");
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
