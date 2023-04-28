@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "CategoryServlet", value = "/categories")
+@WebServlet(name = "CategoryServlet", value = "/secured/categories")
 public class CategoryServlet extends HttpServlet {
 
     @Override

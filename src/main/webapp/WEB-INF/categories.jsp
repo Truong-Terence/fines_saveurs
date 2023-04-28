@@ -42,7 +42,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col">
-          <a href="products" class="underline-none">
+          <a href="${pageContext.request.contextPath}/secured/products" class="underline-none">
             <button class="button d-block mx-auto my-5">Tous les produits</button>
           </a>
         </div>
