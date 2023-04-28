@@ -31,7 +31,16 @@
 
               <jsp:useBean id="categories" scope="request" type="java.util.List"/>
               <c:forEach items="${categories}" var="category">
-              <div class="square text-center d-flex justify-content-center align-items-center"><p>${category.name}</p></div>
+              <div class="square text-center d-flex justify-content-center align-items-center">
+                <p>
+                    ${category.name}
+                </p>
+                <form method="POST" action="/delete-category">
+                  <input type="hidden" name="id_category" value="${category.id}">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <button type="submit">Supprimer</button>
+                </form>
+              </div>
               </c:forEach>
 
           </div>

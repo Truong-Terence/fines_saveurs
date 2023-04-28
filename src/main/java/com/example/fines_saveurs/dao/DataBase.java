@@ -11,7 +11,6 @@ import java.util.Properties;
 
 public abstract class DataBase {
     private static Connection INSTANCE;
-//    TODO retirer credentials de github
     public static Connection getConnection() {
         if (INSTANCE == null) {
             try {
@@ -22,9 +21,7 @@ public abstract class DataBase {
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 INSTANCE = DriverManager.getConnection(appProps.getProperty("bdd_url"), appProps.getProperty("bdd_user"), appProps.getProperty("bdd_password"));
-            } catch (SQLException | ClassNotFoundException | IOException e) {
-                throw new RuntimeException(e);
-            } catch (URISyntaxException e) {
+            } catch (SQLException | ClassNotFoundException | IOException | URISyntaxException e) {
                 throw new RuntimeException(e);
             }
         }

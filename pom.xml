@@ -16,6 +16,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <junit.version>5.9.1</junit.version>
         <jersey.version>3.1.1</jersey.version>
+        <junit.version>5.9.2</junit.version>
+        <mockito.version>5.2.0</mockito.version>
     </properties>
 
     <dependencyManagement>
@@ -51,11 +53,11 @@
         </dependency>
 
         <!-- Java Fakear  -->
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.javafaker</groupId>-->
+<!--            <artifactId>javafaker</artifactId>-->
+<!--            <version>1.0.2</version>-->
+<!--        </dependency>-->
 
         <!--  Servlet API      -->
         <dependency>
@@ -81,6 +83,39 @@
         <dependency>
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-json-binding</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+        <!--  Mockito      -->
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit5       -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
