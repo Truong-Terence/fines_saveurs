@@ -1,3 +1,5 @@
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
 <style><%@include file="../styling/header.css"%></style>
 
 
@@ -20,6 +22,13 @@
                                     <li class="nav-item ms-3" id="products-li">
                                         <a class="nav-link" href="products">Produits</a>
                                     </li>
+                                    <c:if test="${not empty sessionScope.email}">
+                                        <li class="nav-item ms-3" id="logout-li">
+                                            <a href="logout" class="underline-none">
+                                                <button class="button-outline d-block ms-5 my-0">Se d&eacute;connecter</button>
+                                            </a>
+                                        </li>
+                                    </c:if>
                                 </ul>
                             </div>
                         </div>
