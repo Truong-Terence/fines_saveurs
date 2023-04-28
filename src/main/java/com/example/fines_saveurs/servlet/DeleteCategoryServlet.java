@@ -35,7 +35,7 @@ public class DeleteCategoryServlet extends HttpServlet {
             e.printStackTrace();
             throw new ServletException("Unable to delete category", e);
         }
-        response.sendRedirect(request.getContextPath() + "/categories");
+        response.sendRedirect(request.getContextPath() + "/secured/categories");
     }
 
     @Override
