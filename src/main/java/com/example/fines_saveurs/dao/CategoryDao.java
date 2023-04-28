@@ -69,14 +69,17 @@ public class CategoryDao {
         }
     }
 
-    public Category getById(Integer id) {
+    public Category findById(Integer id) {
         Connection connection = DataBase.getConnection();
         Category categoryFound = null;
         try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM category WHERE id_category=?")) {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                categoryFound = mapToCategory(resultSet);
+                categoryFound = new Category(
+                        resultSet.getInt("id_category"),
+                        resultSet.getString("name")
+                );
             }
         } catch (SQLException e) {
             e.printStackTrace();

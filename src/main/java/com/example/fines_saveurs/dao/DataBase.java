@@ -11,7 +11,6 @@ import java.util.Properties;
 
 public abstract class DataBase {
     private static Connection INSTANCE;
-//    TODO retirer credentials de github
     public static Connection getConnection() {
         if (INSTANCE == null) {
             try {
