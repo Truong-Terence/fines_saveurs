@@ -14,6 +14,10 @@ public class Category {
 
     public Category() {}
 
+    public Category(int id) {
+        this.id_category = id;
+    }
+
     public String getName() {
         return name;
     }

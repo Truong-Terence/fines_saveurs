@@ -12,7 +12,7 @@ public class CategoryService {
     public List<Category> fetchAllCategories() {
         return CategoryDao.findAll();
     }
-    public Category getById(Integer id) { return categoryDao.getById(id); }
+    public Category getById(Integer id) { return categoryDao.findById(id); }
     public boolean createCategory(String name) {
         Category categoryToCreate = new Category(name);
         categoryToCreate.setName(name);
