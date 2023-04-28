@@ -24,7 +24,7 @@
                                     </li>
                                     <c:if test="${not empty sessionScope.email}">
                                         <li class="nav-item ms-3" id="logout-li">
-                                            <a href="logout" class="underline-none">
+                                            <a href="${pageContext.request.contextPath}/logout" class="underline-none">
                                                 <button class="button-outline d-block ms-5 my-0">Se d&eacute;connecter</button>
                                             </a>
                                         </li>
