@@ -37,7 +37,7 @@
             </form>
         </div>
         <div class="col text-end">
-            <a href="" class="ms-auto">
+            <a href="${pageContext.request.contextPath}/secured/add-product" class="ms-auto">
                 <button class="button">Ajouter</button>
             </a>
         </div>

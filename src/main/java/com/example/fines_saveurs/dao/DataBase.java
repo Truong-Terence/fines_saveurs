@@ -11,6 +11,7 @@ import java.util.Properties;
 
 public abstract class DataBase {
     private static Connection INSTANCE;
+
     public static Connection getConnection() {
         if (INSTANCE == null) {
             try {
