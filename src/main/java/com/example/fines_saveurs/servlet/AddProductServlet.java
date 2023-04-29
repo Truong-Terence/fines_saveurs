@@ -28,8 +28,10 @@ public class AddProductServlet extends HttpServlet {
         try {
             File image = new File(req.getParameter("file"));
             System.out.println(image.getAbsolutePath());
-            //InputStream imageStream = new FileInputStream("C:\\Users\\chana\\Pictures\\louhans-2502340759.jpg");
-            InputStream imageStream = new FileInputStream(image.getCanonicalPath());
+            InputStream imageStream = new FileInputStream("C:\\Users\\chana\\Pictures\\louhans-2502340759.jpg");
+            //InputStream imageStream = new FileInputStream(image.getCanonicalPath());
+            String realPath = getServletContext().getRealPath("/images/products/" + req.getParameter("file"));
+            System.out.println(realPath);
             new ProductService().saveImage(imageStream);
         } catch (FileNotFoundException error) {
             error.printStackTrace();
