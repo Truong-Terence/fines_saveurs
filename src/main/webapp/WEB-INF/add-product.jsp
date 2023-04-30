@@ -91,6 +91,15 @@
                       <input type="number" step=".01" class="form-control" id="price" name="price">
                   </div>
 
+                  <%-- Category --%>
+                  <div class="mb-3">
+                      <select name="category" class="form-select">
+                          <c:forEach var="cat" items="${categories}">
+                              <option value="${cat.getId()}"> ${cat.getName()} </option>
+                          </c:forEach>
+                      </select>
+                  </div>
+
                   <%-- image --%>
                   <div class="mb-3">
                       <label for="file-selector" class="form-label">Image</label>

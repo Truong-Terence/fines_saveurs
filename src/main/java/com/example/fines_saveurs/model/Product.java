@@ -13,9 +13,10 @@ public class Product {
     String conditioning;
     String origin;
     double price;
+    Category category;
 
 
-    public Product(String name, String brand, String reference, int stock, String imageUrl, String description, String ingredient, String conditioning, String origin, double price) {
+    public Product(String name, String brand, String reference, int stock, String imageUrl, String description, String ingredient, String conditioning, String origin, double price, Category category) {
         this.name = name;
         this.brand = brand;
         this.reference = reference;
@@ -26,10 +27,11 @@ public class Product {
         this.conditioning = conditioning;
         this.origin = origin;
         this.price = price;
+        this.category = category;
     }
 
 
-    public Product(int id_product, String name, String brand, String reference, int stock, String image_url, String description, String ingredient, String conditioning, String origin, double price) {
+    public Product(int id_product, String name, String brand, String reference, int stock, String image_url, String description, String ingredient, String conditioning, String origin, double price, Category category) {
         this.id_product = id_product;
         this.name = name;
         this.brand = brand;
@@ -41,6 +43,7 @@ public class Product {
         this.conditioning = conditioning;
         this.origin = origin;
         this.price = price;
+        this.category = category;
     }
 
     public int getId_product() {
@@ -129,5 +132,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

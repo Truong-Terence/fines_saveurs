@@ -45,6 +45,7 @@ public class CategoryDao {
         }
         return categories;
     }
+
     public boolean create(Category category) {
         Connection connection = DataBase.getConnection();
         try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO category (name) VALUES (?)")) {

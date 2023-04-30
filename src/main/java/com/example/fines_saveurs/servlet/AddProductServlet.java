@@ -1,5 +1,7 @@
 package com.example.fines_saveurs.servlet;
 
+import com.example.fines_saveurs.model.Category;
+import com.example.fines_saveurs.service.CategoryService;
 import com.example.fines_saveurs.service.ProductService;
 import com.example.fines_saveurs.util.Image;
 import jakarta.servlet.ServletException;
@@ -12,6 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Paths;
+import java.util.List;
 
 import jakarta.servlet.http.Part;
 
@@ -23,6 +26,8 @@ public class AddProductServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Category> categories = new CategoryService().fetchAllCategories();
+        req.setAttribute("categories", categories);
         req
                 .getRequestDispatcher("/WEB-INF/add-product.jsp")
                 .forward(req, resp);
@@ -42,6 +47,9 @@ public class AddProductServlet extends HttpServlet {
         String conditioning = request.getParameter("conditioning");
         String origin = request.getParameter("origin");
         double price = Double.parseDouble(request.getParameter("price"));
+        int categoryId = Integer.parseInt(request.getParameter("category"));
+
+        Category category = new Category(categoryId);
 
         // Get image uploaded from the form
         Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
@@ -52,7 +60,7 @@ public class AddProductServlet extends HttpServlet {
         Image.saveImage(fileContent, fileName, this);
 
         // Send data to insert in the database
-        new ProductService().addProduct(name, brand, ref, stock, description, ingredients, conditioning, origin, price, fileName);
+        new ProductService().addProduct(name, brand, ref, stock, description, ingredients, conditioning, origin, price, fileName, category);
 
         response.sendRedirect("/secured/products");
     }
