@@ -23,7 +23,7 @@ public class ProductDao {
 
     public List<InputStream> fetchImages() {
         List<InputStream> inputStreams = new ArrayList<>();
-        String query = "SELECT id_product, image from product WHERE image IS NOT NULL ";
+        String query = "SELECT id_product, image FROM product WHERE image IS NOT NULL ";
         try (Statement statement  = connection.createStatement()) {
             statement.setEscapeProcessing(false);
             ResultSet result = statement.executeQuery(query);
