@@ -21,17 +21,16 @@
   <c:import url="header.jsp"/>
 
 
-  <form action="add-product" method="post">
+  <form action="add-product" method="post" enctype="multipart/form-data">
 
     <div class="mb-3">
-      <label for="formFile" class="form-label">Choisir une image</label>
-      <input class="form-control" type="file" id="formFile" accept="image/png, image/jpeg" name="file">
+      <label for="file-selector" class="form-label">Choisir une image</label>
+      <input class="form-control" type="file" id="file-selector" accept="image/jpg, image/jpeg" name="file">
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
 
   </form>
-
 
 </body>
 

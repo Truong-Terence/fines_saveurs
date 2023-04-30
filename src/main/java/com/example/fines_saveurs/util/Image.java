@@ -3,23 +3,15 @@ package com.example.fines_saveurs.util;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.net.URL;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+
 
 public class Image {
 
-
-    public static int[][] imgToTwoD(String inputFileOrLink) {
+    public static int[][] imgToTwoD(InputStream inputFile) {
         try {
-            BufferedImage image = null;
-            if (inputFileOrLink.substring(0, 4).toLowerCase().equals("http")) {
-                URL imageUrl = new URL(inputFileOrLink);
-                image = ImageIO.read(imageUrl);
-                if (image == null) {
-                    System.out.println("Failed to get image from provided URL.");
-                }
-            } else {
-                image = ImageIO.read(new File(inputFileOrLink));
-            }
+            BufferedImage image = ImageIO.read(inputFile);
             int imgRows = image.getHeight();
             int imgCols = image.getWidth();
             int[][] pixelData = new int[imgRows][imgCols];
@@ -36,7 +28,7 @@ public class Image {
     }
 
 
-    public static void twoDToImage(int[][] imgData, String fileName) {
+    public static void twoDToImage(int[][] imgData, String filePath) {
         try {
             int imgRows = imgData.length;
             int imgCols = imgData[0].length;
@@ -46,11 +38,23 @@ public class Image {
                     result.setRGB(j, i, imgData[i][j]);
                 }
             }
-            File output = new File(fileName);
+            File output = new File(filePath);
             ImageIO.write(result, "jpg", output);
         } catch (Exception e) {
             System.out.println("Failed to save image: " + e.getLocalizedMessage());
         }
     }
 
+
+    public static void saveImage(InputStream inputFile, String imageName, Object servlet) {
+        String imagePath = "";
+        try {
+            File projectDir = new File(servlet.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getParentFile().getParentFile();
+            imagePath = new File(projectDir + "/src/main/webapp/images/products/" + imageName).toString();
+            int[][] imageData = Image.imgToTwoD(inputFile);
+            Image.twoDToImage(imageData, imagePath);
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+        }
+    }
 }
