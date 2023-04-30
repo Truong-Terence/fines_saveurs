@@ -1,10 +1,7 @@
 package com.example.fines_saveurs.dao;
 
-import java.sql.*;
+import com.example.fines_saveurs.model.Product;
 
-public class ProductDao {
-
-    private final Connection connection = DataBase.getConnection();
-
+public interface ProductDao extends GenericDao<Product, Long> {
 
 }
