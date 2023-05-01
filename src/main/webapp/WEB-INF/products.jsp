@@ -46,107 +46,26 @@
     <div class="row my-5">
         <div class="col" id="grid-products">
 
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
-                    </div>
-                </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
+            <c:forEach var="prod" items="${products}">
 
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
+                <div class="product-card">
+                    <div class="col-left">
+                        <p class="uppercase bold small"> ${prod.name} </p>
+                        <p class="bold"> ${prod.brand} </p>
+                        <p>Ref. ${prod.reference} </p>
+                        <p> ${prod.price} €</p>
+                        <p> ${prod.conditioning} </p>
+                        <div class="aligned">
+                            <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
+                            <p class="mb-0">Stock : ${prod.stock} </p>
+                        </div>
+                    </div>
+                    <div class="col-right">
+                        <img src="<c:url value="../images/products/${prod.imageUrl}" />" alt="">
                     </div>
                 </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
-                    </div>
-                </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
-                    </div>
-                </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
-                    </div>
-                </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="col-left">
-                    <p class="uppercase bold small">Tablette chocolat grand cru</p>
-                    <p class="bold">Valrhona</p>
-                    <p>Ref. XXXXX</p>
-                    <p>10 €</p>
-                    <p>100 gr.</p>
-                    <div class="aligned">
-                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                        <p class="mb-0">Stock : 10</p>
-                    </div>
-                </div>
-                <div class="col-right">
-                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
-                </div>
-            </div>
+            </c:forEach>
 
         </div>
     </div>
