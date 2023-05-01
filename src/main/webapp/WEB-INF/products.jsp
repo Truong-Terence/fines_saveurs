@@ -23,7 +23,11 @@
 <div class="container">
     <div class="row my-5">
         <div class="col" id="breadcrumb">
-            <p class="mb-0">Catégories <span>></span> Tous les produits</p>
+            <p class="mb-0">
+                <a href="${pageContext.request.contextPath}/secured/categories">Catégories </a>
+                <span>></span>
+                Tous les produits
+            </p>
         </div>
     </div>
 
