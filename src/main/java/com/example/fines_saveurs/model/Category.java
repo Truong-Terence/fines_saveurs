@@ -1,35 +1,47 @@
 package com.example.fines_saveurs.model;
 
 public class Category {
-    private int id_category;
+
+    private int idCategory;
     private String name;
 
-    public Category(int id_category, String name) {
-        this.name = name;
-        this.id_category = id_category;
+
+    public Category(int id) {
+        this.idCategory = id;
     }
+
+    public Category(int idCategory, String name) {
+        this.name = name;
+        this.idCategory = idCategory;
+    }
+
     public Category(String name) {
         this.name = name;
     }
 
     public Category() {}
 
-    public Category(int id) {
-        this.id_category = id;
-    }
-
     public String getName() {
         return name;
     }
 
     public int getId() {
-        return id_category;
+        return idCategory;
     }
+
     public void setName(String name) {
         this.name = name;
     }
 
     public void setId(int idCategory) {
-        this.id_category = idCategory;
+        this.idCategory = idCategory;
+    }
+
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id_category=" + idCategory +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

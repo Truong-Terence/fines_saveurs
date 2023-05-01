@@ -1,6 +1,7 @@
 package com.example.fines_saveurs.dao;
 
-public class ProductDao {
+import com.example.fines_saveurs.model.Product;
 
+public interface ProductDao extends GenericDao<Product, Long> {
 
 }

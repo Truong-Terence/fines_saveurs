@@ -25,7 +25,7 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col">
-                    <h1 class="text-center">Fiche produit</h1>
+                    <h2 class="text-center">Fiche produit</h2>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="col-5 img-container">
-                    <img src="../images/4d0392165501469.640895c5b6092.jpg" alt="">
+                    <img src="../images/products/4d0392165501469.640895c5b6092.jpg" alt="">
                 </div>
 
             </div>

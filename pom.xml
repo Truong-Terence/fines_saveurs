@@ -33,6 +33,7 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- Driver MySQL       -->
         <dependency>
             <groupId>com.mysql</groupId>
