@@ -60,7 +60,7 @@
                         <p> ${prod.price} €</p>
                         <p> ${prod.conditioning} </p>
                         <div class="aligned">
-                            <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details" class="underline-none uppercase bold smaller text-white">Détails</a></p>
+                            <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details?id=${prod.id}" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                             <p class="mb-0">Stock : ${prod.stock} </p>
                         </div>
                     </div>

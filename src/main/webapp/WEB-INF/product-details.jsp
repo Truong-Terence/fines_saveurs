@@ -30,38 +30,38 @@
             </div>
         </div>
 
-        <div class="container px-0 py-5" id="product-info">
+        <div class="container px-0 py-3" id="product-info">
             <div class="row justify-content-between">
                 <div class="col-6 p-3">
 
                     <dl class="row">
 
                         <dt class="col-sm-3 py-3">Nom</dt>
-                        <dd class="col-sm-9 py-3 uppercase bold small">Tablette chocolat grand cru</dd>
+                        <dd class="col-sm-9 py-3 uppercase bold small"> ${produit.name} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Marque</dt>
-                        <dd class="col-sm-9 py-3 bold">Valrhona</dd>
+                        <dd class="col-sm-9 py-3 bold"> ${produit.brand} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Référence</dt>
-                        <dd class="col-sm-9 py-3">XXXXX</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.reference} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Prix</dt>
-                        <dd class="col-sm-9 py-3">10 €</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.price} €</dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Conditionnement</dt>
-                        <dd class="col-sm-9 py-3">100 gr.</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.conditioning} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Description</dt>
-                        <dd class="col-sm-9 py-3">Lorem ipsum dolor sit amet consectetur. Purus feugiat sit vulputate fusce convallis porta adipiscing cursus.</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.description} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Ingrédients</dt>
-                        <dd class="col-sm-9 py-3">Lorem, ipsum, dolor, sit, amet, consectetur.</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.ingredient} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Origine</dt>
-                        <dd class="col-sm-9 py-3">Cacao de Madagascar transformé en France.</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.origin} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Stock</dt>
-                        <dd class="col-sm-9 py-3">10</dd>
+                        <dd class="col-sm-9 py-3"> ${produit.stock} </dd>
 
                     </dl>
 

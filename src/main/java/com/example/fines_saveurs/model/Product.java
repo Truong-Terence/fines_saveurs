@@ -2,7 +2,7 @@ package com.example.fines_saveurs.model;
 
 public class Product {
 
-    int id_product;
+    int idProduct;
     String name;
     String brand;
     String reference;
@@ -14,6 +14,11 @@ public class Product {
     String origin;
     double price;
     Category category;
+
+
+    public Product() {
+
+    }
 
 
     public Product(String name, String brand, String reference, int stock, String imageUrl, String description, String ingredient, String conditioning, String origin, double price, Category category) {
@@ -31,8 +36,8 @@ public class Product {
     }
 
 
-    public Product(int id_product, String name, String brand, String reference, int stock, String image_url, String description, String ingredient, String conditioning, String origin, double price, Category category) {
-        this.id_product = id_product;
+    public Product(int idProduct, String name, String brand, String reference, int stock, String image_url, String description, String ingredient, String conditioning, String origin, double price, Category category) {
+        this.idProduct = idProduct;
         this.name = name;
         this.brand = brand;
         this.reference = reference;
@@ -46,12 +51,12 @@ public class Product {
         this.category = category;
     }
 
-    public int getId_product() {
-        return id_product;
+    public int getId() {
+        return idProduct;
     }
 
-    public void setId_product(int id_product) {
-        this.id_product = id_product;
+    public void setId(int idProduct) {
+        this.idProduct = idProduct;
     }
 
     public String getName() {

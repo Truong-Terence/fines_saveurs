@@ -65,8 +65,30 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
-    public Product findById(Long aLong) {
-        return null;
+    public Product findById(Integer id) {
+        Product prod = new Product();
+        String query = "SELECT * FROM product WHERE id_product = ?;";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, id);
+            ResultSet result = pst.executeQuery();
+            if (result.next()) {
+                prod.setId(result.getInt("id_product"));
+                prod.setName(result.getString("name"));
+                prod.setBrand(result.getString("brand"));
+                prod.setReference(result.getString("reference"));
+                prod.setStock(result.getInt("stock"));
+                prod.setImageUrl(result.getString("image_url"));
+                prod.setDescription(result.getString("description"));
+                prod.setIngredient(result.getString("ingredient"));
+                prod.setConditioning(result.getString("conditioning"));
+                prod.setOrigin(result.getString("origin"));
+                prod.setPrice(result.getDouble("price"));
+                prod.setCategory(new Category(result.getInt("id_category")));
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return prod;
     }
 
     @Override
