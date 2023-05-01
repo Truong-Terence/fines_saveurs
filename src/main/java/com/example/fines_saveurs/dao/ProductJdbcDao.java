@@ -92,6 +92,36 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
+    public List<Product> findByCategory(int categoryId) {
+        List<Product> products = new ArrayList<>();
+        String query = "SELECT * FROM product WHERE id_category = ?;";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setInt(1, categoryId);
+            ResultSet result = pst.executeQuery();
+            if (result.next()) {
+                Product prod = new Product();
+                prod.setId(result.getInt("id_product"));
+                prod.setName(result.getString("name"));
+                prod.setBrand(result.getString("brand"));
+                prod.setReference(result.getString("reference"));
+                prod.setStock(result.getInt("stock"));
+                prod.setImageUrl(result.getString("image_url"));
+                prod.setDescription(result.getString("description"));
+                prod.setIngredient(result.getString("ingredient"));
+                prod.setConditioning(result.getString("conditioning"));
+                prod.setOrigin(result.getString("origin"));
+                prod.setPrice(result.getDouble("price"));
+                prod.setCategory(new Category(result.getInt("id_category")));
+                products.add(prod);
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return products;
+    }
+
+
+    @Override
     public void update(Product entity) {
 
     }
@@ -100,4 +130,5 @@ public class ProductJdbcDao implements ProductDao {
     public void delete(Product entity) {
 
     }
+
 }

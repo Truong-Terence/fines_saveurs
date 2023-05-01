@@ -77,7 +77,6 @@
 }
 
 #breadcrumb span {
-    color: var(--accent-color-dark);
     padding-left: 4px;
     padding-right: 4px;
 }
