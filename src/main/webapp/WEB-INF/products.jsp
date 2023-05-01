@@ -59,7 +59,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div class="col-right">
-                    <img src="<c:url value="../images/4d0392165501469.640895c5b6092.jpg" />" alt="">
+                    <img src="<c:url value="../images/products/4d0392165501469.640895c5b6092.jpg" />" alt="">
                 </div>
             </div>
 

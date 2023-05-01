@@ -3,6 +3,8 @@ package com.example.fines_saveurs.servlet;
 import com.example.fines_saveurs.model.Category;
 import com.example.fines_saveurs.service.CategoryService;
 import com.example.fines_saveurs.service.ProductService;
+import com.example.fines_saveurs.util.GenerateShortUUID;
+
 import com.example.fines_saveurs.util.Image;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -40,16 +42,17 @@ public class AddProductServlet extends HttpServlet {
         // Get input values
         String name = request.getParameter("product-name");
         String brand = request.getParameter("brand");
-        String ref = request.getParameter("ref");
         int stock = Integer.parseInt(request.getParameter("stock"));
         String description = request.getParameter("description");
         String ingredients = request.getParameter("ingredients");
         String conditioning = request.getParameter("conditioning");
         String origin = request.getParameter("origin");
         double price = Double.parseDouble(request.getParameter("price"));
-        int categoryId = Integer.parseInt(request.getParameter("category"));
 
+        int categoryId = Integer.parseInt(request.getParameter("category"));
         Category category = new Category(categoryId);
+
+        String ref = GenerateShortUUID.next(6);
 
         // Get image uploaded from the form
         Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">

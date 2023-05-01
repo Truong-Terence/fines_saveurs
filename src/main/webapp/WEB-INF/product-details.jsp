@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="col-5 img-container">
-                    <img src="../images/4d0392165501469.640895c5b6092.jpg" alt="">
+                    <img src="../images/products/4d0392165501469.640895c5b6092.jpg" alt="">
                 </div>
 
             </div>

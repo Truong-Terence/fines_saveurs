@@ -48,12 +48,6 @@
                       <input type="text" class="form-control" id="brand" name="brand">
                   </div>
 
-                  <%-- reference --%>
-                  <div class="mb-3">
-                      <label for="ref" class="form-label">Référence</label>
-                      <input type="text" class="form-control" id="ref" name="ref">
-                  </div>
-
                   <%-- stock --%>
                   <div class="mb-3">
                       <label for="stock" class="form-label">Stock</label>
