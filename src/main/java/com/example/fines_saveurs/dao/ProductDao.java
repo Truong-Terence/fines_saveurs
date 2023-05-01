@@ -2,6 +2,9 @@ package com.example.fines_saveurs.dao;
 
 import com.example.fines_saveurs.model.Product;
 
-public interface ProductDao extends GenericDao<Product, Long> {
+import java.util.List;
 
+public interface ProductDao extends GenericDao<Product, Integer> {
+
+    public List<Product> findByCategory(int categoryId);
 }
