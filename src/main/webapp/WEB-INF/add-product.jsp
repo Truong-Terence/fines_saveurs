@@ -95,7 +95,7 @@
                   <div class="mb-3">
                       <select name="category" class="form-select">
                           <c:forEach var="cat" items="${categories}">
-                              <option value="${cat.getId()}"> ${cat.getName()} </option>
+                              <option value="${cat.id}"> ${cat.name} </option>
                           </c:forEach>
                       </select>
                   </div>

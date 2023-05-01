@@ -26,6 +26,7 @@ public class ProductJdbcDao implements ProductDao {
             pst.setString(9, entity.getOrigin());
             pst.setDouble(10, entity.getPrice());
             pst.setInt(11, entity.getCategory().getId());
+            System.out.println(pst);
             pst.executeUpdate();
             success = true;
         } catch (SQLException error) {

@@ -46,15 +46,11 @@ public class Image {
     }
 
 
-    public static void saveImage(InputStream inputFile, String imageName, Object servlet) {
-        String imagePath = "";
-        try {
-            File projectDir = new File(servlet.getClass().getProtectionDomain().getCodeSource().getLocation().toURI()).getParentFile().getParentFile().getParentFile().getParentFile();
-            imagePath = new File(projectDir + "/src/main/webapp/images/products/" + imageName).toString();
-            int[][] imageData = Image.imgToTwoD(inputFile);
-            Image.twoDToImage(imageData, imagePath);
-        } catch (URISyntaxException e) {
-            e.printStackTrace();
-        }
+    public void saveImage(InputStream inputFile, String imageName) {
+        String projectPath = new Path().getProjectPath();
+        String pathFromRepoRoot = "/src/main/webapp/images/products/";
+        String imagePath = projectPath + pathFromRepoRoot + imageName;
+        int[][] imageData = Image.imgToTwoD(inputFile);
+        Image.twoDToImage(imageData, imagePath);
     }
 }

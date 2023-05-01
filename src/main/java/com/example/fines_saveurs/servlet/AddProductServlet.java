@@ -57,7 +57,7 @@ public class AddProductServlet extends HttpServlet {
         InputStream fileContent = filePart.getInputStream();
 
         // Save image in the app in /webapp/images/products
-        Image.saveImage(fileContent, fileName, this);
+        new Image().saveImage(fileContent, fileName);
 
         // Send data to insert in the database
         new ProductService().addProduct(name, brand, ref, stock, description, ingredients, conditioning, origin, price, fileName, category);
