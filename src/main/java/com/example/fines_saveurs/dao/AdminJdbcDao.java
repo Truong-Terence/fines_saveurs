@@ -38,7 +38,7 @@ public class AdminJdbcDao implements AdminDao {
     public Admin findByEmail (String email) {
         Connection connection = DataBase.getConnection();
 
-        String query = "SELECT id_admin, email, password FROM admin WHERE email=?";
+        String query = "SELECT id, email, password FROM admin WHERE email=?";
 
         Admin adminFound = null;
 
@@ -47,7 +47,7 @@ public class AdminJdbcDao implements AdminDao {
             ResultSet result = pst.executeQuery();
             if (result.next()) {
                 adminFound = new Admin(
-                        result.getLong("id_admin"),
+                        result.getLong("id"),
 
                         result.getString("email"),
                         result.getString("password")

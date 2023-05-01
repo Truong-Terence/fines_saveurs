@@ -36,7 +36,7 @@
                     ${category.name}
                 </p>
                 <form method="POST" action="/delete-category">
-                  <input type="hidden" name="id_category" value="${category.id}">
+                  <input type="hidden" name="id" value="${category.id}">
                   <input type="hidden" name="_method" value="DELETE">
                   <button type="submit">Supprimer</button>
                 </form>

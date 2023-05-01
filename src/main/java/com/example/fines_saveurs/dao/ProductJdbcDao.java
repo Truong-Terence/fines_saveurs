@@ -43,7 +43,7 @@ public class ProductJdbcDao implements ProductDao {
         try (Statement statement = connection.createStatement()) {
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
-                int id = result.getInt("id_product");
+                int id = result.getInt("id");
                 String name = result.getString("name");
                 String brand = result.getString("brand");
                 String ref = result.getString("reference");
