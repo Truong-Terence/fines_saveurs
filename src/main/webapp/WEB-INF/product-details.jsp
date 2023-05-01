@@ -37,38 +37,38 @@
                     <dl class="row">
 
                         <dt class="col-sm-3 py-3">Nom</dt>
-                        <dd class="col-sm-9 py-3 uppercase bold small"> ${produit.name} </dd>
+                        <dd class="col-sm-9 py-3 uppercase bold small"> ${product.name} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Marque</dt>
-                        <dd class="col-sm-9 py-3 bold"> ${produit.brand} </dd>
+                        <dd class="col-sm-9 py-3 bold"> ${product.brand} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Référence</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.reference} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.reference} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Prix</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.price} €</dd>
+                        <dd class="col-sm-9 py-3"> ${product.price} €</dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Conditionnement</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.conditioning} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.conditioning} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Description</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.description} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.description} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Ingrédients</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.ingredient} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.ingredient} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Origine</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.origin} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.origin} </dd>
                         <hr>
                         <dt class="col-sm-3 py-3">Stock</dt>
-                        <dd class="col-sm-9 py-3"> ${produit.stock} </dd>
+                        <dd class="col-sm-9 py-3"> ${product.stock} </dd>
 
                     </dl>
 
                 </div>
 
                 <div class="col-5 img-container">
-                    <img src="../images/products/4d0392165501469.640895c5b6092.jpg" alt="">
+                    <img src="../images/products/${product.imageUrl}" alt="">
                 </div>
 
             </div>
