@@ -48,7 +48,7 @@ public class Image {
 
     public void saveImage(InputStream inputFile, String imageName) {
         String projectPath = new Path().getProjectPath();
-        String pathFromRepoRoot = "/src/main/webapp/images/products/";
+        String pathFromRepoRoot = "/product-images/";
         String imagePath = projectPath + pathFromRepoRoot + imageName;
         int[][] imageData = Image.imgToTwoD(inputFile);
         Image.twoDToImage(imageData, imagePath);
