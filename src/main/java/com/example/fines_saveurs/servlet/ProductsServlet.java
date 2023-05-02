@@ -14,8 +14,6 @@ import java.util.List;
 @WebServlet(name = "ProductsServlet", urlPatterns = {"/secured/products"})
 public class ProductsServlet extends HttpServlet {
 
-    public static final String URL = "/products";
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String categoryId = request.getParameter("category_id");

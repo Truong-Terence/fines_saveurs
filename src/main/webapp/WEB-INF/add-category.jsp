@@ -1,23 +1,37 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tvnte
-  Date: 25/04/2023
-  Time: 16:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Create Category</title>
+    <%@include file="../styling/import-styles.jsp"%>
+    <style>
+        <%@include file="../styling/global.css"%>
+        <%@include file="../styling/add-product.css"%>
+    </style>
 </head>
 <body>
-
-<form action="${pageContext.request.contextPath}/add-category" method="post">
-    <label for="name">Nom de la catégorie :</label>
-    <input type="text" name="name" id="name">
-    <br>
-    <button type="submit">Ajouter</button>
-</form>
-
+<c:import url="header.jsp"/>
+<div id="add-category" class="pb-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center">Nouvelle catégorie</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <form action="${pageContext.request.contextPath}add-category" method="post">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom de la catégorie</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Libanais ..">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

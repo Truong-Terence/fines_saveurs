@@ -1,7 +1,9 @@
 package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.dao.CategoryDao;
+import com.example.fines_saveurs.dao.CategoryJdbcDao;
 import com.example.fines_saveurs.model.Category;
+import com.example.fines_saveurs.service.CategoryService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,22 +16,16 @@ import java.util.logging.Logger;
 
 @WebServlet(urlPatterns = DeleteCategoryServlet.URL)
 public class DeleteCategoryServlet extends HttpServlet {
-    public static final String URL = "/delete-category";
-    private final Logger logger = Logger.getLogger(DeleteCategoryServlet.class.getName());
+    public static final String URL = "/secured/delete-category";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
 
 
-        CategoryDao categoryDao = new CategoryDao();
+        CategoryDao categoryDao = (CategoryDao) new CategoryService();
         Category category = new Category(id);
-        try {
-            categoryDao.delete(category);
-        } catch (SQLException e) {
-            e.printStackTrace();
-            throw new ServletException("Unable to delete category", e);
-        }
+        categoryDao.delete(category);
         response.sendRedirect(request.getContextPath() + "/secured/categories");
     }
 
@@ -37,6 +33,4 @@ public class DeleteCategoryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
-
-
 }
