@@ -127,8 +127,8 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
-    public void delete(Product entity) {
-
+    public boolean delete(Product entity) {
+        return false;
     }
 
 }

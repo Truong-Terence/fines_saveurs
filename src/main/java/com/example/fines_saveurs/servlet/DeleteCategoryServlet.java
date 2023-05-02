@@ -23,10 +23,9 @@ public class DeleteCategoryServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
 
 
-        CategoryDao categoryDao = (CategoryDao) new CategoryService();
-        Category category = new Category(id);
-        categoryDao.delete(category);
-        response.sendRedirect(request.getContextPath() + "/secured/categories");
+        CategoryService categoryService = new CategoryService();
+        categoryService.deleteCategory(id);
+            response.sendRedirect(request.getContextPath() + "/secured/categories");
     }
 
     @Override

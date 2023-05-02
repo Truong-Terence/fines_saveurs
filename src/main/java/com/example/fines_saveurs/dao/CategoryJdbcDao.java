@@ -90,7 +90,7 @@ public class CategoryJdbcDao implements CategoryDao{
     }
 
     @Override
-    public void delete(Category category) {
+    public boolean delete(Category category) {
         String query = "DELETE FROM category WHERE id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, category.getId());
@@ -100,6 +100,7 @@ public class CategoryJdbcDao implements CategoryDao{
             e.printStackTrace();
             throw new RuntimeException("Unable to delete Category");
         }
+        return false;
     }
 
 }
