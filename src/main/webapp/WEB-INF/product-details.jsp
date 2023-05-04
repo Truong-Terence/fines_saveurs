@@ -68,7 +68,7 @@
                 </div>
 
                 <div class="col-5 img-container">
-                    <img src="../images/products/${product.imageUrl}" alt="">
+                    <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
                 </div>
 
             </div>

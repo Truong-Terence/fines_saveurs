@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="col-right">
-                        <img src="<c:url value="../images/products/${prod.imageUrl}" />" alt="">
+                        <img src="image?file=${pageContext.request.contextPath}${prod.imageUrl}" alt="">
                     </div>
                 </div>
 
