@@ -95,11 +95,11 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public List<Product> findByCategory(int categoryId) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM product WHERE id = ?";
+        String query = "SELECT * FROM product WHERE id_category = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, categoryId);
             ResultSet result = pst.executeQuery();
-            if (result.next()) {
+            while (result.next()) {
                 Product prod = new Product();
                 prod.setId(result.getInt("id"));
                 prod.setName(result.getString("name"));
