@@ -6,9 +6,7 @@ import com.example.fines_saveurs.model.Product;
 
 import java.util.List;
 
-
 public class ProductService {
-
     private final ProductJdbcDao productDao = new ProductJdbcDao();
 
     public boolean addProduct(String name, String brand, String ref, int stock, String description, String ingredients, String conditioning, String origin, double price, String fileName, Category category) {
