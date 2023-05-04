@@ -14,7 +14,7 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public boolean create(Product entity) {
         boolean success = false;
-        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id_category) " +
+        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id) " +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, entity.getName());
@@ -94,13 +94,13 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public List<Product> findByCategory(int categoryId) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM product WHERE id_category = ?;";
+        String query = "SELECT * FROM product WHERE id = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, categoryId);
             ResultSet result = pst.executeQuery();
             if (result.next()) {
                 Product prod = new Product();
-                prod.setId(result.getInt("id_product"));
+                prod.setId(result.getInt("id"));
                 prod.setName(result.getString("name"));
                 prod.setBrand(result.getString("brand"));
                 prod.setReference(result.getString("reference"));
