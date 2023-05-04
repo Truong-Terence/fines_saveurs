@@ -15,6 +15,7 @@
 }
 
 .square {
+    position: relative;
     width: 184px;
     height: 184px;
     background-color: var(--secondary-color-light);

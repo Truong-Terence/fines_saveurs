@@ -30,7 +30,7 @@ public class AdminJdbcDao implements AdminDao {
     }
 
     @Override
-    public void delete(Admin entity) {
+    public boolean delete(Admin entity) {
         throw new RuntimeException();
     }
 

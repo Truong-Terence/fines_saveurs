@@ -1,6 +1,7 @@
 package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.model.Category;
+import com.example.fines_saveurs.model.Product;
 import com.example.fines_saveurs.service.CategoryService;
 import com.example.fines_saveurs.service.ProductService;
 import com.example.fines_saveurs.util.GenerateShortUUID;
