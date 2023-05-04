@@ -11,6 +11,7 @@ import java.util.Properties;
 
 public abstract class DataBase {
     private static Connection INSTANCE;
+
     public static Connection getConnection() {
         if (INSTANCE == null) {
             try {
@@ -18,7 +19,6 @@ public abstract class DataBase {
                 String appConfigPath = rootPath + "app.properties";
                 Properties appProps = new Properties();
                 appProps.load(new FileInputStream(appConfigPath));
-
 
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 INSTANCE = DriverManager.getConnection(appProps.getProperty("bdd_url"), appProps.getProperty("bdd_user"), appProps.getProperty("bdd_password"));

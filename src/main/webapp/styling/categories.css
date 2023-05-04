@@ -32,3 +32,8 @@
 #categories-li {
     border-bottom: 1px solid var(--secondary-color-dark);
 }
+
+#categories a {
+    color: unset;
+    text-decoration: none;
+}
