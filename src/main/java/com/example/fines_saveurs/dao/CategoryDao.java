@@ -20,10 +20,10 @@ public class CategoryDao {
 //
 //        return new Category(id, name);
         Category category = new Category();
-        category.setId(resultSet.getInt("id_category"));
+        category.setId(resultSet.getInt("id"));
         category.setName(resultSet.getString("name"));
 
-        System.out.println("id_category: " + category.getId());
+        System.out.println("id: " + category.getId());
         System.out.println("name: " + category.getName());
 
         return category;
@@ -32,11 +32,11 @@ public class CategoryDao {
     public static List<Category> findAll() {
         Connection connection = DataBase.getConnection();
         List<Category> categories = new ArrayList<>();
-        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_category, name FROM category")){
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, name FROM category")){
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 categories.add(new Category(
-                        resultSet.getInt("id_category"),
+                        resultSet.getInt("id"),
                         resultSet.getString("name")
                 ));
             }
@@ -60,7 +60,7 @@ public class CategoryDao {
 
     public void delete(Category category) throws SQLException {
         Connection connection = DataBase.getConnection();
-        try (PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM category WHERE id_category=?")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM category WHERE id=?")) {
             preparedStatement.setInt(1, category.getId());
 
             int row = preparedStatement.executeUpdate();
@@ -73,12 +73,12 @@ public class CategoryDao {
     public Category findById(Integer id) {
         Connection connection = DataBase.getConnection();
         Category categoryFound = null;
-        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM category WHERE id_category=?")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM category WHERE id=?")) {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                 categoryFound = new Category(
-                        resultSet.getInt("id_category"),
+                        resultSet.getInt("id"),
                         resultSet.getString("name")
                 );
             }
