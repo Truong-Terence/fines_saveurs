@@ -44,4 +44,12 @@ public class Category {
                 ", name='" + name + '\'' +
                 '}';
     }
+
+    public int getInt(String id) {
+        return this.id;
+    }
+
+    public String getString(String name) {
+        return this.name;
+    }
 }

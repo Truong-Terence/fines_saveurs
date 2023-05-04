@@ -67,7 +67,7 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public Product findById(Integer id) {
         Product prod = new Product();
-        String query = "SELECT * FROM product WHERE id = ?;";
+        String query = "SELECT * FROM product WHERE id = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, id);
             ResultSet result = pst.executeQuery();
@@ -127,8 +127,8 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
-    public void delete(Product entity) {
-
+    public boolean delete(Product entity) {
+        return false;
     }
 
 }

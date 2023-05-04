@@ -22,28 +22,34 @@
 
   <div class="page">
 
+
     <div class="container pb-5">
+    <div class="row">
+      <div class="col">
+      </div>
+      <div class="col text-end">
+        <a href="${pageContext.request.contextPath}/secured/add-category" class="ms-auto">
+          <button class="button">Ajouter</button>
+        </a>
+      </div>
+    </div>
       <div class="row flex-column justify-content-center">
         <div class="col d-flex flex-column justify-content-around">
           <h2 class="text-center my-5">Catégories</h2>
-          <div class="square-grid my-3 py-5">
-            <div class="square text-center d-flex justify-content-center align-items-center"><img src="../images/plus-sign.svg" alt="ajouter une catégorie"></div>
+            <div class="square-grid my-3 py-5">
+              <div class="square text-center d-flex justify-content-center align-items-center"><img src="../images/plus-sign.svg" alt="ajouter une catégorie"></div>
 
-              <jsp:useBean id="categories" scope="request" type="java.util.List"/>
-              <c:forEach items="${categories}" var="category">
-              <div class="square text-center d-flex justify-content-center align-items-center">
-                <p>
-                    ${category.name}
-                </p>
-                <form method="POST" action="/delete-category">
-                  <input type="hidden" name="id" value="${category.id}">
-                  <input type="hidden" name="_method" value="DELETE">
-                  <button type="submit">Supprimer</button>
-                </form>
-              </div>
-              </c:forEach>
-
-          </div>
+                <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+                <c:forEach items="${categories}" var="category">
+                <div class="square text-center d-flex justify-content-center align-items-center">
+                  <p>
+                      <a class="stretched-link" href="${pageContext.request.contextPath}/secured/category-details?id=${category.id}">
+                        ${category.name}
+                      </a>
+                  </p>
+                </div>
+                </c:forEach>
+            </div>
         </div>
       </div>
     </div>
