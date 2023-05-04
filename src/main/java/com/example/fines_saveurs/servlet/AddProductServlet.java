@@ -1,6 +1,7 @@
 package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.model.Category;
+import com.example.fines_saveurs.model.Product;
 import com.example.fines_saveurs.service.CategoryService;
 import com.example.fines_saveurs.service.ProductService;
 import com.example.fines_saveurs.util.GenerateShortUUID;
@@ -59,7 +60,7 @@ public class AddProductServlet extends HttpServlet {
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
         InputStream fileContent = filePart.getInputStream();
 
-        // Save image in the app in /webapp/images/products
+        // Save image in the app in product-images
         new Image().saveImage(fileContent, fileName);
 
         // Send data to insert in the database

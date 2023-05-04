@@ -22,36 +22,29 @@
 
   <div class="page">
 
+
     <div class="container pb-5">
       <div class="row flex-column justify-content-center">
         <div class="col d-flex flex-column justify-content-around">
           <h2 class="text-center my-5">Catégories</h2>
-          <div class="square-grid my-3 py-5">
-            <div class="square text-center d-flex justify-content-center align-items-center"><img src="../images/plus-sign.svg" alt="ajouter une catégorie"></div>
+            <div class="square-grid my-3 py-5">
+              <a href="${pageContext.request.contextPath}/secured/add-category" class="ms-auto"><div class="square text-center d-flex justify-content-center align-items-center"><img src="../images/plus-sign.svg" alt="ajouter une catégorie"></div></a>
 
-              <jsp:useBean id="categories" scope="request" type="java.util.List"/>
-              <c:forEach items="${categories}" var="category">
-
-                <a href="${pageContext.request.contextPath}/secured/products?category_id=${category.id}&category_name=${category.name}">
-                  <div class="square text-center d-flex justify-content-center align-items-center">
-                    <p>
+                <jsp:useBean id="categories" scope="request" type="java.util.List"/>
+                <c:forEach items="${categories}" var="category">
+                <div class="square text-center d-flex justify-content-center align-items-center">
+                  <p>
+                      <a class="stretched-link" href="${pageContext.request.contextPath}/secured/products?category_id=${category.id}&category_name=${category.name}">
                         ${category.name}
-                    </p>
-                    <form method="POST" action="/delete-category">
-                      <input type="hidden" name="id_category" value="${category.id}">
-                      <input type="hidden" name="_method" value="DELETE">
-                      <button type="submit">Supprimer</button>
-                    </form>
-                  </div>
-                </a>
-
-              </c:forEach>
-
-          </div>
+                      </a>
+                  </p>
+                </div>
+                </c:forEach>
+            </div>
         </div>
       </div>
     </div>
-
+<%--ADD COMMIT--%>
     <div class="container-fluid">
       <div class="row">
         <div class="col">

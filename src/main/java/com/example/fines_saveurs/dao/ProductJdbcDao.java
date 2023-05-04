@@ -14,7 +14,7 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public boolean create(Product entity) {
         boolean success = false;
-        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id_category) " +
+        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id) " +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, entity.getName());
@@ -43,7 +43,7 @@ public class ProductJdbcDao implements ProductDao {
         try (Statement statement = connection.createStatement()) {
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
-                int id = result.getInt("id_product");
+                int id = result.getInt("id");
                 String name = result.getString("name");
                 String brand = result.getString("brand");
                 String ref = result.getString("reference");
@@ -67,12 +67,13 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public Product findById(Integer id) {
         Product prod = new Product();
-        String query = "SELECT * FROM product WHERE id_product = ?;";
+        String query = "SELECT * FROM product WHERE id = ?";
+
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, id);
             ResultSet result = pst.executeQuery();
             if (result.next()) {
-                prod.setId(result.getInt("id_product"));
+                prod.setId(result.getInt("id"));
                 prod.setName(result.getString("name"));
                 prod.setBrand(result.getString("brand"));
                 prod.setReference(result.getString("reference"));
@@ -94,13 +95,13 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public List<Product> findByCategory(int categoryId) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM product WHERE id_category = ?;";
+        String query = "SELECT * FROM product WHERE id = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, categoryId);
             ResultSet result = pst.executeQuery();
             if (result.next()) {
                 Product prod = new Product();
-                prod.setId(result.getInt("id_product"));
+                prod.setId(result.getInt("id"));
                 prod.setName(result.getString("name"));
                 prod.setBrand(result.getString("brand"));
                 prod.setReference(result.getString("reference"));
@@ -127,8 +128,8 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
-    public void delete(Product entity) {
-
+    public boolean delete(Product entity) {
+        return false;
     }
 
 }
