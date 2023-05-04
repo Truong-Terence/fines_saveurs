@@ -88,6 +88,7 @@
                   <%-- Category --%>
                   <div class="mb-3">
                       <select name="category" class="form-select">
+                          <option value="${cat.id}" selected> ${cat.name} </option>
                           <c:forEach var="cat" items="${categories}">
                               <option value="${cat.id}"> ${cat.name} </option>
                           </c:forEach>

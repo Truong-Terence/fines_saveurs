@@ -23,7 +23,7 @@ public class ImageServlet extends HttpServlet {
 
         BufferedInputStream bin = new BufferedInputStream(fin);
         BufferedOutputStream bout = new BufferedOutputStream(out);
-        int ch =0; ;
+        int ch =0;
         while((ch=bin.read())!=-1) {
             bout.write(ch);
         }

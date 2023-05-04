@@ -6,7 +6,18 @@ import java.util.List;
 
 public interface CategoryDao extends GenericDao<Category, Integer> {
 
+//    Category findById(Integer id);
+//
+    Category findByName(String name);
+
+    boolean create(Category entity);
+
+    List<Category> findAll();
+
     Category findById(Integer id);
 
-    Category findByName(String name);
+    void update(Category entity);
+
+    boolean delete(Category entity);
+
 }

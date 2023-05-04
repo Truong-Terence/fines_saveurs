@@ -68,6 +68,7 @@ public class ProductJdbcDao implements ProductDao {
     public Product findById(Integer id) {
         Product prod = new Product();
         String query = "SELECT * FROM product WHERE id = ?";
+
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, id);
             ResultSet result = pst.executeQuery();
