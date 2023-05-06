@@ -55,7 +55,7 @@
 
             <c:forEach var="prod" items="${products}">
 
-                <div class="product-card">
+                <div class="product-card overflow-hidden">
                     <div class="col-left">
                         <p class="uppercase bold small"> ${prod.name} </p>
                         <p class="bold"> ${prod.brand} </p>
