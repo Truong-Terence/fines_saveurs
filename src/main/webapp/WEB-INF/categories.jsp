@@ -29,7 +29,6 @@
           <h2 class="text-center my-5">Catégories</h2>
             <div class="square-grid my-3 py-5">
               <a href="${pageContext.request.contextPath}/secured/add-category" class="ms-auto"><div class="square text-center d-flex justify-content-center align-items-center"><img src="../images/plus-sign.svg" alt="ajouter une catégorie"></div></a>
-
                 <jsp:useBean id="categories" scope="request" type="java.util.List"/>
                 <c:forEach items="${categories}" var="category">
                 <div class="square text-center d-flex justify-content-center align-items-center">
