@@ -22,6 +22,7 @@ public class CategoryService {
     public Category getById(Integer id) { return categoryDao.findById(id); }
 
     public boolean deleteCategory(int id) {
+
         return categoryDao.delete(new Category(id));
     }
 }
