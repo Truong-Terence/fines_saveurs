@@ -38,3 +38,33 @@
     color: unset;
     text-decoration: none;
 }
+
+.square .bi-pencil-square {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    z-index: 100;
+    opacity: 0;
+    transition: 0.1s;
+}
+
+.square .bi-trash3 {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 100;
+    opacity: 0;
+    transition: 0.1s;
+}
+
+.square:hover .bi-pencil-square,
+.square:hover .bi-trash3 {
+    opacity: 0.8;
+}
+
+.bi-pencil-square:hover,
+.bi-trash3:hover {
+    opacity: 1;
+}
+
+
