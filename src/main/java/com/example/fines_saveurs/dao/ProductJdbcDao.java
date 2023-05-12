@@ -128,7 +128,16 @@ public class ProductJdbcDao implements ProductDao {
     }
 
     @Override
-    public boolean delete(Product entity) {
+    public boolean delete(Product product) {
+        String query = "DELETE FROM product WHERE id=?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, product.getId());
+
+            int row = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Unable to delete Product");
+        }
         return false;
     }
 
