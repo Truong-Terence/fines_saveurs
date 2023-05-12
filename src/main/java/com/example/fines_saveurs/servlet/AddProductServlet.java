@@ -1,12 +1,11 @@
 package com.example.fines_saveurs.servlet;
 
 import com.example.fines_saveurs.model.Category;
-import com.example.fines_saveurs.model.Product;
 import com.example.fines_saveurs.service.CategoryService;
+import com.example.fines_saveurs.service.ImageService;
 import com.example.fines_saveurs.service.ProductService;
 import com.example.fines_saveurs.util.GenerateShortUUID;
 
-import com.example.fines_saveurs.util.Image;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -61,7 +60,7 @@ public class AddProductServlet extends HttpServlet {
         InputStream fileContent = filePart.getInputStream();
 
         // Save image in the app in product-images
-        new Image().saveImage(fileContent, fileName);
+        new ImageService().saveImage(fileContent, fileName);
 
         // Send data to insert in the database
         new ProductService().addProduct(name, brand, ref, stock, description, ingredients, conditioning, origin, price, fileName, category);
