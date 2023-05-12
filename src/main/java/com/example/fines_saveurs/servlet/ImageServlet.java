@@ -1,37 +1,29 @@
 package com.example.fines_saveurs.servlet;
 
+import com.example.fines_saveurs.service.ImageService;
+import com.example.fines_saveurs.util.Image;
 import com.example.fines_saveurs.util.Path;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 @WebServlet(name = "ImageServlet", value = "/secured/image")
 public class ImageServlet extends HttpServlet {
 
+    private ImageService service = new ImageService();
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        String imageFileName = request.getParameter("file");
         response.setContentType("image/jpg");
-        ServletOutputStream out;
-        out = response.getOutputStream();
-        String origin = new Path().getProjectPath() + "/product-images/" + request.getParameter("file");
-        FileInputStream fin = new FileInputStream(origin);
 
-        BufferedInputStream bin = new BufferedInputStream(fin);
-        BufferedOutputStream bout = new BufferedOutputStream(out);
-        int ch =0;
-        while((ch=bin.read())!=-1) {
-            bout.write(ch);
+        try (ServletOutputStream out = response.getOutputStream();) {
+            service.readImage(imageFileName, out);
+        } catch (IOException error) {
+            error.printStackTrace();
         }
-
-        bin.close();
-        fin.close();
-        bout.close();
-        out.close();
     }
 
 }
