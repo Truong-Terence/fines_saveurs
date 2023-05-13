@@ -21,6 +21,9 @@ public class Product {
 
     }
 
+    public Product(int id) {
+        this.id = id;
+    }
 
     public Product(String name, String brand, String reference, int stock, String imageUrl, String description, String ingredient, String conditioning, String origin, double price, Category category) {
         this.name = name;
