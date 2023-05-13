@@ -64,7 +64,7 @@
 
 .bi-pencil-square:hover,
 .bi-trash3:hover {
-    opacity: 1;
+    opacity: 1 !important;
 }
 
 
