@@ -4,6 +4,7 @@ import com.example.fines_saveurs.model.Category;
 import com.example.fines_saveurs.service.CategoryService;
 import com.example.fines_saveurs.service.ImageService;
 import com.example.fines_saveurs.service.ProductService;
+import com.example.fines_saveurs.util.DataHandler;
 import com.example.fines_saveurs.util.GenerateShortUUID;
 
 import jakarta.servlet.ServletException;
@@ -42,14 +43,23 @@ public class AddProductServlet extends HttpServlet {
         // Get input values
         String name = request.getParameter("product-name");
         String brand = request.getParameter("brand");
-        int stock = Integer.parseInt(request.getParameter("stock"));
+
+        int stock = DataHandler.handleEmptyParam(
+                request.getParameter("stock"), Integer.class);
+
         String description = request.getParameter("description");
         String ingredients = request.getParameter("ingredients");
-        String conditioning = request.getParameter("conditioning");
-        String origin = request.getParameter("origin");
-        double price = Double.parseDouble(request.getParameter("price"));
 
-        int categoryId = Integer.parseInt(request.getParameter("category"));
+        String conditioning = DataHandler.handleEmptyParam(
+                request.getParameter("conditioning"), String.class);
+
+        String origin = request.getParameter("origin");
+
+        double price = DataHandler.handleEmptyParam(
+                request.getParameter("price"), Double.class);
+
+        int categoryId = DataHandler.handleEmptyParam(
+                request.getParameter("category"), Integer.class);
         Category category = new Category(categoryId);
 
         String ref = GenerateShortUUID.next(6);
@@ -57,10 +67,12 @@ public class AddProductServlet extends HttpServlet {
         // Get image uploaded from the form
         Part filePart = request.getPart("file"); // Retrieves <input type="file" name="file">
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
-        InputStream fileContent = filePart.getInputStream();
 
         // Save image in the app in product-images
-        new ImageService().saveImage(fileContent, fileName);
+        if (fileName.length() > 0) {
+            InputStream fileContent = filePart.getInputStream();
+            new ImageService().saveImage(fileContent, fileName);
+        }
 
         // Send data to insert in the database
         new ProductService().addProduct(name, brand, ref, stock, description, ingredients, conditioning, origin, price, fileName, category);

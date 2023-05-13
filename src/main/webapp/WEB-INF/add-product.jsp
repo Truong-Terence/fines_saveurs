@@ -38,14 +38,14 @@
 
                   <%-- name --%>
                   <div class="mb-3">
-                      <label for="product-name" class="form-label">Nom du produit</label>
-                      <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit">
+                      <label for="product-name" class="form-label">Nom du produit *</label>
+                      <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit" required>
                   </div>
 
                   <%-- brand --%>
                   <div class="mb-3">
-                      <label for="brand" class="form-label">Marque</label>
-                      <input type="text" class="form-control" id="brand" name="brand">
+                      <label for="brand" class="form-label">Marque *</label>
+                      <input type="text" class="form-control" id="brand" name="brand" required>
                   </div>
 
                   <%-- stock --%>
