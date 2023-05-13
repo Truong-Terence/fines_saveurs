@@ -62,13 +62,23 @@
                     <hr>
                     <dt class="col-sm-3 py-3">Stock</dt>
                     <dd class="col-sm-9 py-3"> ${product.stock} </dd>
+                    <hr>
+                    <dt class="col-sm-3 py-3">Catégorie</dt>
+                    <dd class="col-sm-9 py-3"> ${product.category.name} </dd>
 
                 </dl>
 
             </div>
 
             <div class="col-5 img-container">
-                <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
+                <c:choose>
+                    <c:when test="${product.imageUrl.length() == 0}">
+                        <img src="/images/placeholder.jpg" alt="">
+                    </c:when>
+                    <c:otherwise>
+                        <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
+                    </c:otherwise>
+                </c:choose>
             </div>
 
         </div>
@@ -81,12 +91,12 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <a href="#" class="underline-none">
+                            <a href="${pageContext.request.contextPath}/secured/edit-product?id=${product.id}" class="underline-none">
                                 <button class="button d-block my-5">Éditer</button>
                             </a>
                         </div>
                         <div class="col">
-                            <form method="POST" action="${pageContext.request.contextPath}delete-product">
+                            <form method="get" action="${pageContext.request.contextPath}delete-product">
                                 <input type="hidden" name="id" value="${product.id}">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button class="button d-block ms-auto my-5" type="submit">Supprimer</button>

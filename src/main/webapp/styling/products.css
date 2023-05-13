@@ -33,6 +33,10 @@
     width: calc(100% - 225px);
 }
 
+.conditioning {
+    min-height: 22px;
+}
+
 .product-card .col-right {
     width: 225px;
     height: 225px;
