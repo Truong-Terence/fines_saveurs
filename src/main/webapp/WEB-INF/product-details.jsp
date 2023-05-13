@@ -68,7 +68,14 @@
             </div>
 
             <div class="col-5 img-container">
-                <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
+                <c:choose>
+                    <c:when test="${product.imageUrl.length() == 0}">
+                        <img src="/images/placeholder.jpg" alt="">
+                    </c:when>
+                    <c:otherwise>
+                        <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
+                    </c:otherwise>
+                </c:choose>
             </div>
 
         </div>
@@ -81,7 +88,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <a href="${pageContext.request.contextPath}/edit-product?id=${product.id}" class="underline-none">
+                            <a href="${pageContext.request.contextPath}/secured/edit-product?id=${product.id}" class="underline-none">
                                 <button class="button d-block my-5">Éditer</button>
                             </a>
                         </div>

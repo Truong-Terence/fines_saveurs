@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 public class DataHandler {
 
     public static <T> T handleEmptyParam(String param, Class<T> valueType) {
-        T returnedValue = (T) "non renseigné";
+        T returnedValue = (T) "";
         try {
             if (Number.class.isAssignableFrom(valueType) && (!valueType.equals(String.class) && param == null || param.equals(""))) {
                 param = "0";

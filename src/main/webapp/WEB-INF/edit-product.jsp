@@ -34,7 +34,7 @@
 
         <div class="col-6 mx-auto">
 
-            <form action="add-product" method="post" enctype="multipart/form-data">
+            <form action="edit-product?id=${product.id}" method="post" enctype="multipart/form-data">
 
                 <%-- name --%>
                 <div class="mb-3">
@@ -93,12 +93,6 @@
                             <option value="${cat.id}" ${cat.id == product.category.id ? "selected" : ""}> ${cat.name} </option>
                         </c:forEach>
                     </select>
-                </div>
-
-                <%-- image --%>
-                <div class="mb-3">
-                    <label for="file-selector" class="form-label">Image</label>
-                    <input class="form-control" type="file" id="file-selector" accept="image/jpg, image/jpeg" name="file">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

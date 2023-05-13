@@ -17,6 +17,7 @@ public class ImageServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         String imageFileName = request.getParameter("file");
+        if (imageFileName.length() == 0) return;
         response.setContentType("image/jpg");
 
         try (ServletOutputStream out = response.getOutputStream();) {

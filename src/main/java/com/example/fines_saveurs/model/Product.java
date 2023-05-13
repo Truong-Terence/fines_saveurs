@@ -3,7 +3,6 @@ package com.example.fines_saveurs.model;
 public class Product {
 
     int id;
-
     String name;
     String brand;
     String reference;
@@ -18,7 +17,6 @@ public class Product {
 
 
     public Product() {
-
     }
 
     public Product(int id) {
@@ -39,6 +37,17 @@ public class Product {
         this.category = category;
     }
 
+    public Product(int id, String name, String brand, int stock, String description, String ingredients, String conditioning, String origin, double price, Category category) {
+        this.name = name;
+        this.brand = brand;
+        this.stock = stock;
+        this.description = description;
+        this.ingredient = ingredients;
+        this.conditioning = conditioning;
+        this.origin = origin;
+        this.price = price;
+        this.category = category;
+    }
 
     public Product(int id, String name, String brand, String reference, int stock, String image_url, String description, String ingredient, String conditioning, String origin, double price, Category category) {
         this.id = id;

@@ -68,7 +68,6 @@ public class ProductJdbcDao implements ProductDao {
     public Product findById(Integer id) {
         Product prod = new Product();
         String query = "SELECT * FROM product WHERE id = ?";
-
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, id);
             ResultSet result = pst.executeQuery();
@@ -124,7 +123,25 @@ public class ProductJdbcDao implements ProductDao {
 
     @Override
     public void update(Product entity) {
-
+        String query = "" +
+                "UPDATE product " +
+                "SET name = ?, brand = ?, stock = ?, description = ?, ingredient = ?, conditioning = ?, origin = ?, price = ?, id_category = ? " +
+                "WHERE id = ?;";
+        try (PreparedStatement pst = connection.prepareStatement(query);) {
+            pst.setString(1, entity.getName());
+            pst.setString(2, entity.getBrand());
+            pst.setInt(3, entity.getStock());
+            pst.setString(4, entity.getDescription());
+            pst.setString(5, entity.getIngredient());
+            pst.setString(6, entity.getConditioning());
+            pst.setString(7, entity.getOrigin());
+            pst.setDouble(8, entity.getPrice());
+            pst.setInt(9, entity.getCategory().getId());
+            pst.setInt(10, entity.getId());
+            pst.executeUpdate();
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
     }
 
     @Override
@@ -132,7 +149,6 @@ public class ProductJdbcDao implements ProductDao {
         String query = "DELETE FROM product WHERE id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, product.getId());
-
             int row = preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
