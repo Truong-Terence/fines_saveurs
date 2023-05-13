@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Fines Saveurs | Produits</title>
+  <title>Fines Saveurs | Ajout de produit</title>
   <%@include file="../styling/import-styles.jsp"%>
   <style>
     <%@include file="../styling/global.css"%>

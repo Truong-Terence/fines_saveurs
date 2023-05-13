@@ -81,7 +81,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <a href="#" class="underline-none">
+                            <a href="${pageContext.request.contextPath}/edit-product?id=${product.id}" class="underline-none">
                                 <button class="button d-block my-5">Éditer</button>
                             </a>
                         </div>
