@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body id="products" class="pb-5">
+<body id="products">
 
 <c:import url="header.jsp"/>
 
@@ -50,8 +50,8 @@
         </div>
     </div>
 
-    <div class="row my-5">
-        <div class="col" id="grid-products">
+    <div class="row my-5 pb-5">
+        <div class="col pb-5" id="grid-products">
 
             <c:forEach var="prod" items="${products}">
 
@@ -59,9 +59,9 @@
                     <div class="col-left">
                         <p class="uppercase bold small"> ${prod.name} </p>
                         <p class="bold"> ${prod.brand} </p>
-                        <p>Ref. ${prod.reference} </p>
+                        <p> Ref. ${prod.reference} </p>
                         <p> ${prod.price} €</p>
-                        <p> ${prod.conditioning} </p>
+                        <p class="conditioning"> ${prod.conditioning} </p>
                         <div class="aligned">
                             <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details?id=${prod.id}" class="underline-none uppercase bold smaller text-white">Détails</a></p>
                             <p class="mb-0">Stock : ${prod.stock} </p>

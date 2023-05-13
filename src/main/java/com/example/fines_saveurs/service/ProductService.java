@@ -33,7 +33,6 @@ public class ProductService {
     public Product updateProduct(int id, String name, String brand, int stock, String description, String ingredients, String conditioning, String origin, double price, int categoryId) {
         Category category = new Category(categoryId);
         Product product = new Product(id, name, brand, stock, description, ingredients, conditioning, origin, price, category);
-        System.out.println(product);
         productDao.update(product);
         return productDao.findById(id);
     }

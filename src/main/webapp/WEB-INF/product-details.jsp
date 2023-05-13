@@ -62,6 +62,9 @@
                     <hr>
                     <dt class="col-sm-3 py-3">Stock</dt>
                     <dd class="col-sm-9 py-3"> ${product.stock} </dd>
+                    <hr>
+                    <dt class="col-sm-3 py-3">Catégorie</dt>
+                    <dd class="col-sm-9 py-3"> ${product.category.name} </dd>
 
                 </dl>
 
@@ -93,7 +96,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <form method="POST" action="${pageContext.request.contextPath}delete-product">
+                            <form method="get" action="${pageContext.request.contextPath}delete-product">
                                 <input type="hidden" name="id" value="${product.id}">
                                 <input type="hidden" name="_method" value="DELETE">
                                 <button class="button d-block ms-auto my-5" type="submit">Supprimer</button>

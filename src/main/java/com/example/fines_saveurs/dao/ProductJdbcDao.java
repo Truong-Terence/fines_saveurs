@@ -39,7 +39,11 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public List<Product> findAll() {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM product";
+        String query = "" +
+                "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
+                "FROM product p " +
+                "INNER JOIN category c " +
+                "ON p.id_category = c.id;";
         try (Statement statement = connection.createStatement()) {
             ResultSet result = statement.executeQuery(query);
             while (result.next()) {
@@ -54,7 +58,10 @@ public class ProductJdbcDao implements ProductDao {
                 String conditioning = result.getString("conditioning");
                 String origin = result.getString("origin");
                 double price = result.getDouble("price");
-                Category cat = new Category(result.getInt("id_category"));
+                Category cat = new Category(
+                        result.getInt("id_category"),
+                        result.getString("name_category")
+                );
                 Product prod = new Product(id, name, brand, ref, stock, imageUrl, description, ingredients, conditioning, origin, price, cat);
                 products.add(prod);
             }
@@ -67,7 +74,12 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public Product findById(Integer id) {
         Product prod = new Product();
-        String query = "SELECT * FROM product WHERE id = ?";
+        String query = "" +
+                "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
+                "FROM product p " +
+                "INNER JOIN category c " +
+                "ON p.id_category = c.id " +
+                "WHERE p.id = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, id);
             ResultSet result = pst.executeQuery();
@@ -83,7 +95,10 @@ public class ProductJdbcDao implements ProductDao {
                 prod.setConditioning(result.getString("conditioning"));
                 prod.setOrigin(result.getString("origin"));
                 prod.setPrice(result.getDouble("price"));
-                prod.setCategory(new Category(result.getInt("id_category")));
+                prod.setCategory(new Category(
+                        result.getInt("id_category"),
+                        result.getString("name_category")
+                ));
             }
         } catch (SQLException error) {
             error.printStackTrace();

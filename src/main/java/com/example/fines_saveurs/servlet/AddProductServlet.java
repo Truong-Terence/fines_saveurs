@@ -44,22 +44,23 @@ public class AddProductServlet extends HttpServlet {
         String name = request.getParameter("product-name");
         String brand = request.getParameter("brand");
 
-        int stock = DataHandler.handleEmptyParam(
+        int stock = DataHandler.parseParam(
                 request.getParameter("stock"), Integer.class);
 
         String description = request.getParameter("description");
         String ingredients = request.getParameter("ingredients");
 
-        String conditioning = DataHandler.handleEmptyParam(
+        String conditioning = DataHandler.parseParam(
                 request.getParameter("conditioning"), String.class);
 
         String origin = request.getParameter("origin");
 
-        double price = DataHandler.handleEmptyParam(
+        double price = DataHandler.parseParam(
                 request.getParameter("price"), Double.class);
 
-        int categoryId = DataHandler.handleEmptyParam(
+        int categoryId = DataHandler.parseParam(
                 request.getParameter("category"), Integer.class);
+        if (categoryId == 0) categoryId = 1; // Default category: undefined
         Category category = new Category(categoryId);
 
         String ref = GenerateShortUUID.next(6);

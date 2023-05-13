@@ -38,6 +38,7 @@ public class Product {
     }
 
     public Product(int id, String name, String brand, int stock, String description, String ingredients, String conditioning, String origin, double price, Category category) {
+        this.id = id;
         this.name = name;
         this.brand = brand;
         this.stock = stock;

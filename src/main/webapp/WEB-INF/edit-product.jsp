@@ -34,7 +34,7 @@
 
         <div class="col-6 mx-auto">
 
-            <form action="edit-product?id=${product.id}" method="post" enctype="multipart/form-data">
+            <form action="${pageContext.request.contextPath}/secured/edit-product?id=${product.id}" method="post">
 
                 <%-- name --%>
                 <div class="mb-3">
@@ -57,13 +57,13 @@
                 <%-- description --%>
                 <div class="mb-3">
                     <label for="description">Description</label>
-                    <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 100px" name="description">${product.description}</textarea>
+                    <textarea class="form-control" id="description" style="height: 100px" name="description">${product.description}</textarea>
                 </div>
 
                 <%-- ingredients --%>
                 <div class="mb-3">
                     <label for="ingredients">Ingrédients</label>
-                    <textarea class="form-control" placeholder="Leave a comment here" id="ingredients" style="height: 100px" name="ingredients">${product.ingredient}</textarea>
+                    <textarea class="form-control" id="ingredients" style="height: 100px" name="ingredients">${product.ingredient}</textarea>
                 </div>
 
 

@@ -33,27 +33,25 @@ public class EditProductServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         // Get input values
         int id = Integer.parseInt(request.getParameter("id"));
 
         String name = request.getParameter("product-name");
         String brand = request.getParameter("brand");
 
-        int stock = DataHandler.handleEmptyParam(
+        int stock = DataHandler.parseParam(
                 request.getParameter("stock"), Integer.class);
 
         String description = request.getParameter("description");
         String ingredients = request.getParameter("ingredients");
-
-        String conditioning = DataHandler.handleEmptyParam(
-                request.getParameter("conditioning"), String.class);
-
+        String conditioning = request.getParameter("conditioning");
         String origin = request.getParameter("origin");
 
-        double price = DataHandler.handleEmptyParam(
+        double price = DataHandler.parseParam(
                 request.getParameter("price"), Double.class);
 
-        int categoryId = DataHandler.handleEmptyParam(
+        int categoryId = DataHandler.parseParam(
                 request.getParameter("category"), Integer.class);
 
         // Update product data
