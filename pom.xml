@@ -34,6 +34,12 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>12.0.2</version>
+        </dependency>
+
         <!-- Driver MySQL       -->
         <dependency>
             <groupId>com.mysql</groupId>

@@ -18,15 +18,23 @@ public class ProductService {
         return productDao.findAll();
     }
 
-
     public List<Product> fetchProductsByCategory(int categoryId) {
         return productDao.findByCategory(categoryId);
     }
-
 
     public Product fetchProductById(int id) {
         return productDao.findById(id);
     }
 
+    public boolean deleteProduct(int id) {
+        return productDao.delete(new Product(id));
+    }
+
+    public Product updateProduct(int id, String name, String brand, int stock, String description, String ingredients, String conditioning, String origin, double price, int categoryId) {
+        Category category = new Category(categoryId);
+        Product product = new Product(id, name, brand, stock, description, ingredients, conditioning, origin, price, category);
+        productDao.update(product);
+        return productDao.findById(id);
+    }
 
 }
