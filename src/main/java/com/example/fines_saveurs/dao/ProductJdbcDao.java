@@ -6,6 +6,7 @@ import com.example.fines_saveurs.model.Product;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class ProductJdbcDao implements ProductDao {
 
@@ -13,8 +14,7 @@ public class ProductJdbcDao implements ProductDao {
 
     @Override
     public boolean create(Product entity) {
-        boolean success = false;
-        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id) " +
+        String query = "INSERT INTO flavour.product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id_category) " +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, entity.getName());
@@ -28,12 +28,14 @@ public class ProductJdbcDao implements ProductDao {
             pst.setString(9, entity.getOrigin());
             pst.setDouble(10, entity.getPrice());
             pst.setInt(11, entity.getCategory().getId());
-            pst.executeUpdate();
-            success = true;
+            int row = pst.executeUpdate();
+            if (row == 1) {
+                return true;
+            }
         } catch (SQLException error) {
             error.printStackTrace();
         }
-        return success;
+        return false;
     }
 
     @Override
@@ -41,8 +43,8 @@ public class ProductJdbcDao implements ProductDao {
         List<Product> products = new ArrayList<>();
         String query = "" +
                 "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
-                "FROM product p " +
-                "INNER JOIN category c " +
+                "FROM flavour.product p " +
+                "INNER JOIN flavour.category c " +
                 "ON p.id_category = c.id;";
         try (Statement statement = connection.createStatement()) {
             ResultSet result = statement.executeQuery(query);
@@ -76,8 +78,8 @@ public class ProductJdbcDao implements ProductDao {
         Product prod = new Product();
         String query = "" +
                 "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
-                "FROM product p " +
-                "INNER JOIN category c " +
+                "FROM flavour.product p " +
+                "INNER JOIN flavour.category c " +
                 "ON p.id_category = c.id " +
                 "WHERE p.id = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
@@ -109,7 +111,7 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public List<Product> findByCategory(int categoryId) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT * FROM product WHERE id_category = ?";
+        String query = "SELECT * FROM flavour.product WHERE id_category = ?";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setInt(1, categoryId);
             ResultSet result = pst.executeQuery();
@@ -139,7 +141,7 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public void update(Product entity) {
         String query = "" +
-                "UPDATE product " +
+                "UPDATE flavour.product " +
                 "SET name = ?, brand = ?, stock = ?, description = ?, ingredient = ?, conditioning = ?, origin = ?, price = ?, id_category = ? " +
                 "WHERE id = ?;";
         try (PreparedStatement pst = connection.prepareStatement(query);) {
@@ -161,7 +163,7 @@ public class ProductJdbcDao implements ProductDao {
 
     @Override
     public boolean delete(Product product) {
-        String query = "DELETE FROM product WHERE id=?";
+        String query = "DELETE FROM flavour.product WHERE id=?";
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, product.getId());
             int row = preparedStatement.executeUpdate();
