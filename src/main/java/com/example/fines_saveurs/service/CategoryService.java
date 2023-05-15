@@ -29,4 +29,9 @@ public class CategoryService {
     public boolean deleteCategory(int id) {
         return categoryDao.delete(new Category(id));
     }
+
+    public void updateCategory(Category category) {
+        categoryDao.update(category);
+    }
+
 }

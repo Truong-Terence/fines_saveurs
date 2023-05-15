@@ -85,8 +85,15 @@ public class CategoryJdbcDao implements CategoryDao{
 
 
     @Override
-    public void update(Category entity) {
-
+    public void update(Category category) {
+        String query = "UPDATE category SET name=? WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, category.getName());
+            statement.setInt(2, category.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating category", e);
+        }
     }
 
     @Override
