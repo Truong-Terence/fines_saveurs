@@ -1,24 +1,21 @@
 package com.example.fines_saveurs.dao;
 
 import com.example.fines_saveurs.model.Admin;
+import com.example.fines_saveurs.model.Category;
+import com.example.fines_saveurs.model.Product;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdminJdbcDao implements AdminDao {
+
+    private final Connection connection = DataBase.getConnection();
+
     @Override
     public boolean create(Admin entity) {
         throw new RuntimeException();
     }
-
-    @Override
-    public List<Admin> findAll() {
-        throw new RuntimeException();
-    }
-
     @Override
     public Admin findById(Long aLong) {
         throw new RuntimeException();
@@ -36,8 +33,6 @@ public class AdminJdbcDao implements AdminDao {
 
     @Override
     public Admin findByEmail (String email) {
-        Connection connection = DataBase.getConnection();
-
         String query = "SELECT id, email, password FROM admin WHERE email=?";
 
         Admin adminFound = null;
@@ -57,5 +52,23 @@ public class AdminJdbcDao implements AdminDao {
             e.printStackTrace();
         }
         return adminFound;
+    }
+
+    @Override
+    public List<Admin> findAll() {
+        List<Admin> admins = new ArrayList<>();
+        String query = "SELECT * FROM admin";
+        try (Statement statement = connection.createStatement()) {
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+                Long id = result.getLong("id");
+                String email = result.getString("email");
+                String password = result.getString("password");
+                admins.add(new Admin(id, email, password));
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return admins;
     }
 }

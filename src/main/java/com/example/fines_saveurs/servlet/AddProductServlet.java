@@ -60,7 +60,6 @@ public class AddProductServlet extends HttpServlet {
 
         int categoryId = DataHandler.parseParam(
                 request.getParameter("category"), Integer.class);
-        if (categoryId == 0) categoryId = 1; // Default category: undefined
         Category category = new Category(categoryId);
 
         String ref = GenerateShortUUID.next(6);

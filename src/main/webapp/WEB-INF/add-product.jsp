@@ -87,7 +87,7 @@
 
                   <%-- Category --%>
                   <div class="mb-3">
-                      <select name="category" class="form-select">
+                      <select name="category" class="form-select" required>
                           <option value="" disabled selected> Choisir une catégorie </option>
                           <c:forEach var="cat" items="${categories}">
                               <option value="${cat.id}"> ${cat.name} </option>
