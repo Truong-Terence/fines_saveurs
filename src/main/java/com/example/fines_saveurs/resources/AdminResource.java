@@ -17,7 +17,6 @@ public class AdminResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Admin> getAllAdmins() {
-        System.out.println("adminDao.findAll()");
         return adminDao.findAll();
     }
 }

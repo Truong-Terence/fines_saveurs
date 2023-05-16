@@ -12,46 +12,34 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(urlPatterns = DeleteCategoryServlet.URL)
+@WebServlet(urlPatterns = CategoryUpdateServlet.URL)
 public class CategoryUpdateServlet extends HttpServlet {
 
-    public static final String URL = "/secured/update-category";
+    public static final String URL = "/secured/edit-category";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-
-        CategoryService categoryService = new CategoryService();
-        categoryService.updateCategory(id);
-
-        // Mettre la catégorie dans l'attribut "category" de la requête
+        Category category = new CategoryService().getById(id);
         request.setAttribute("category", category);
 
-        // Afficher le formulaire de mise à jour
-        request.getRequestDispatcher("/category-update.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/edit-category.jsp").forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        // Récupérer les données du formulaire
-        int categoryId = Integer.parseInt(request.getParameter("id"));
-        String categoryName = request.getParameter("name");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // Valider les entrées
-        if (categoryName == null || categoryName.trim().isEmpty()) {
-            // Si le nom de catégorie est vide, afficher une erreur
-            request.setAttribute("error", "Le nom de catégorie ne peut pas être vide");
-            request.getRequestDispatcher("/category-update.jsp").forward(request, response);
-            return;
+        int id = Integer.parseInt(request.getParameter("id"));
+        String name = request.getParameter("name");
+
+        CategoryService categoryService = new CategoryService();
+        Category category = categoryService.getById(id);
+
+        if (category != null) {
+            category.setName(name);
+            categoryService.updateCategory(category);
         }
 
-        // Mettre à jour la catégorie dans la base de données
-        CategoryDao categoryDao = new CategoryJdbcDao();
-        Category category = new Category(categoryId, categoryName);
-        categoryDao.update(category);
-
-        // Rediriger vers la page d'affichage des catégories
-        response.sendRedirect(request.getContextPath() + "/category");
+        response.sendRedirect("/secured/categories");
     }
 }
