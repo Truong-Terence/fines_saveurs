@@ -14,8 +14,8 @@ public class ProductJdbcDao implements ProductDao {
     @Override
     public boolean create(Product entity) {
         boolean success = false;
-        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id) " +
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
+        String query = "INSERT INTO product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id_category) " +
+                "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, entity.getName());
             pst.setString(2, entity.getBrand());
