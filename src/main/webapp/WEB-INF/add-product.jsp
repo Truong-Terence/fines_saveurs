@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Fines Saveurs | Produits</title>
+  <title>Fines Saveurs | Ajout de produit</title>
   <%@include file="../styling/import-styles.jsp"%>
   <style>
     <%@include file="../styling/global.css"%>
@@ -38,14 +38,14 @@
 
                   <%-- name --%>
                   <div class="mb-3">
-                      <label for="product-name" class="form-label">Nom du produit</label>
-                      <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit">
+                      <label for="product-name" class="form-label">Nom du produit *</label>
+                      <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit" required>
                   </div>
 
                   <%-- brand --%>
                   <div class="mb-3">
-                      <label for="brand" class="form-label">Marque</label>
-                      <input type="text" class="form-control" id="brand" name="brand">
+                      <label for="brand" class="form-label">Marque *</label>
+                      <input type="text" class="form-control" id="brand" name="brand" required>
                   </div>
 
                   <%-- stock --%>
@@ -87,7 +87,7 @@
 
                   <%-- Category --%>
                   <div class="mb-3">
-                      <select name="category" class="form-select">
+                      <select name="category" class="form-select" required>
                           <option value="" disabled selected> Choisir une catégorie </option>
                           <c:forEach var="cat" items="${categories}">
                               <option value="${cat.id}"> ${cat.name} </option>

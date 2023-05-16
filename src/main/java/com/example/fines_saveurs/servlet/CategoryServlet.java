@@ -15,8 +15,13 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Category> categories = new CategoryService().fetchAllCategories();
+        CategoryService service = new CategoryService();
+
+        List<Category> categories = service.fetchAllCategories();
         request.setAttribute("categories", categories);
+
+        List<Category> emptyCategories = service.fetchEmptyCategories();
+        request.setAttribute("emptyCategories", emptyCategories);
 
         request.getRequestDispatcher("/WEB-INF/categories.jsp").forward(request, response);
     }

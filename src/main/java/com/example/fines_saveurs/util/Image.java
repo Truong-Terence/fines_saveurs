@@ -44,13 +44,4 @@ public class Image {
             System.out.println("Failed to save image: " + e.getLocalizedMessage());
         }
     }
-
-
-    public void saveImage(InputStream inputFile, String imageName) {
-        String projectPath = new Path().getProjectPath();
-        String pathFromRepoRoot = "/product-images/";
-        String imagePath = projectPath + pathFromRepoRoot + imageName;
-        int[][] imageData = Image.imgToTwoD(inputFile);
-        Image.twoDToImage(imageData, imagePath);
-    }
 }
