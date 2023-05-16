@@ -20,13 +20,10 @@
             <url-pattern>/images/*</url-pattern>
         </servlet-mapping>
 
-<<<<<<< HEAD
-=======
         <!-- API -->
         <servlet-mapping>
             <servlet-name>Jersey Web Application</servlet-name>
             <url-pattern>/webapi/*</url-pattern>
         </servlet-mapping>
 
->>>>>>> develop
 </web-app>

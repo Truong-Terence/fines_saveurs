@@ -10,7 +10,7 @@ public class AdminController {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
+    public String getAllAdmin() {
         return "Got it!";
     }
 }
