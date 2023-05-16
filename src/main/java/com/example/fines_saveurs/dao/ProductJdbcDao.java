@@ -168,6 +168,7 @@ public class ProductJdbcDao implements ProductDao {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, product.getId());
             int row = preparedStatement.executeUpdate();
+            if (row == 1) return true;
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("Unable to delete Product");

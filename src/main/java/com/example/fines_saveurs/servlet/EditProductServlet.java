@@ -57,6 +57,6 @@ public class EditProductServlet extends HttpServlet {
         // Update product data
         new ProductService().updateProduct(id, name, brand, stock, description, ingredients, conditioning, origin, price, categoryId);
 
-        response.sendRedirect("/secured/products");
+        response.sendRedirect("/secured/product-details?id=" + id);
     }
 }
