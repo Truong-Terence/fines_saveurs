@@ -37,4 +37,10 @@ public class ProductService {
         return productDao.findById(id);
     }
 
+    public List<Product> searchByKeywords(String keywords) {
+        String[] keywordsArray = keywords.split(" ");
+        List<Product> posts = productDao.fetchByKeywords(keywordsArray);
+        return posts;
+    }
+
 }

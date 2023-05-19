@@ -176,4 +176,51 @@ public class ProductJdbcDao implements ProductDao {
         return false;
     }
 
+
+    public List<Product> fetchByKeywords(String[] keywords) {
+        String query = "" +
+                "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
+                "FROM flavour.product p " +
+                "INNER JOIN flavour.category c " +
+                "ON p.id_category = c.id " +
+                "WHERE p.name LIKE CONCAT('%',?,'%') " +
+                "OR p.description LIKE CONCAT('%',?,'%') " +
+                "OR p.brand LIKE CONCAT('%',?,'%') " +
+                "OR p.reference LIKE CONCAT('%',?,'%') " +
+                "OR c.name LIKE CONCAT('%',?,'%');";
+        List<Product> products = new ArrayList<>();
+
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setString(1, keywords[0]);
+            pst.setString(2, keywords[0]);
+            pst.setString(3, keywords[0]);
+            pst.setString(4, keywords[0]);
+            pst.setString(5, keywords[0]);
+            ResultSet result = pst.executeQuery();
+
+            while (result.next()) {
+                int id = result.getInt("id");
+                String name = result.getString("name");
+                String brand = result.getString("brand");
+                String ref = result.getString("reference");
+                int stock = result.getInt("stock");
+                String imageUrl = result.getString("image_url");
+                String description = result.getString("description");
+                String ingredients = result.getString("ingredient");
+                String conditioning = result.getString("conditioning");
+                String origin = result.getString("origin");
+                double price = result.getDouble("price");
+                Category cat = new Category(
+                        result.getInt("id_category"),
+                        result.getString("name_category")
+                );
+                Product prod = new Product(id, name, brand, ref, stock, imageUrl, description, ingredients, conditioning, origin, price, cat);
+                products.add(prod);
+            }
+        } catch (SQLException | NullPointerException e) {
+            e.printStackTrace();
+        }
+        return products;
+    }
+
 }
