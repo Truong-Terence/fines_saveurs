@@ -36,10 +36,10 @@
 
     <div class="row">
         <div class="col">
-            <form action="">
+            <form action="${pageContext.request.contextPath}/secured/search" method="get">
                 <div class="mb-3 position-relative">
-                    <input type="text" placeholder="Rechercher un produit">
-                    <input type="submit" value="" class="position-absolute end-0">
+                    <input type="text" placeholder="Rechercher un produit" name="keywords" value="${keywords}" >
+                    <input type="submit" class="position-absolute end-0" value="">
                 </div>
             </form>
         </div>
