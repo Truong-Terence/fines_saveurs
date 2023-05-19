@@ -53,6 +53,8 @@
     <div class="row my-5 pb-5">
         <div class="col pb-5" id="grid-products">
 
+            <p id="no-result">Votre recherche n'a produit aucun résultat.</p>
+
             <c:forEach var="prod" items="${products}">
 
                 <div class="product-card overflow-hidden">
@@ -84,6 +86,21 @@
         </div>
     </div>
 </div>
+
+<script>
+    if (document.getElementsByClassName("product-card").length > 0) {
+        document.getElementById("no-result").style.display = "none";
+    }
+
+    const handleClick = event => {
+        event.target.setSelectionRange(0,event.target.value.length);
+    }
+
+    document
+        .querySelector('input[name="keywords"]')
+        .addEventListener("click", handleClick);
+
+</script>
 
 </body>
 
