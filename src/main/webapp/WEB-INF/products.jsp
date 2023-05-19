@@ -95,7 +95,6 @@
     const handleClick = event => {
         const inputElement = event.target;
         inputElement.setSelectionRange(0, inputElement.value.length);
-        inputElement.removeEventListener("click", handleClick);
     }
 
     document
