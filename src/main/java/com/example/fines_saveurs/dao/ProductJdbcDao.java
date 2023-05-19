@@ -177,7 +177,7 @@ public class ProductJdbcDao implements ProductDao {
     }
 
 
-    public List<Product> fetchByKeywords(String[] keywords) {
+    public List<Product> fetchByKeywords(String keyword) {
         String query = "" +
                 "SELECT p.id AS 'id', p.name AS 'name', p.brand AS 'brand', p.reference AS 'reference', p.price AS 'price', p.conditioning AS 'conditioning', p.description AS 'description', p.ingredient AS 'ingredient', p.origin AS 'origin', p.stock AS 'stock', p.image_url AS 'image_url', p.id_category AS 'id_category', c.name AS 'name_category' " +
                 "FROM flavour.product p " +
@@ -191,11 +191,11 @@ public class ProductJdbcDao implements ProductDao {
         List<Product> products = new ArrayList<>();
 
         try (PreparedStatement pst = connection.prepareStatement(query)) {
-            pst.setString(1, keywords[0]);
-            pst.setString(2, keywords[0]);
-            pst.setString(3, keywords[0]);
-            pst.setString(4, keywords[0]);
-            pst.setString(5, keywords[0]);
+            pst.setString(1, keyword);
+            pst.setString(2, keyword);
+            pst.setString(3, keyword);
+            pst.setString(4, keyword);
+            pst.setString(5, keyword);
             ResultSet result = pst.executeQuery();
 
             while (result.next()) {
