@@ -13,10 +13,14 @@
 
                             <c:choose>
                                 <c:when test="${empty sessionScope.email}">
-                                    <a class="navbar-brand" href="">Fines Saveurs</a>
+                                    <a class="navbar-brand" href="">
+                                        <img src="/images/logo-transparent.svg" alt="logo" class="logo">
+                                    </a>
                                 </c:when>
                                 <c:otherwise>
-                                    <a class="navbar-brand" href="${pageContext.request.contextPath}/secured/categories">Fines Saveurs</a>
+                                    <a class="navbar-brand" href="${pageContext.request.contextPath}/secured/categories">
+                                        <img src="/images/logo-transparent.svg" alt="logo" class="logo">
+                                    </a>
                                 </c:otherwise>
                             </c:choose>
 
