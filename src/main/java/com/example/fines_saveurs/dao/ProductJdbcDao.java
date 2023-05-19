@@ -14,6 +14,7 @@ public class ProductJdbcDao implements ProductDao {
 
     @Override
     public boolean create(Product entity) {
+
         String query = "INSERT INTO flavour.product (name, brand, reference, stock, image_url, description, ingredient, conditioning, origin, price, id_category) " +
                 "VALUES (?,?,?,?,?,?,?,?,?,?,?);";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
@@ -167,6 +168,7 @@ public class ProductJdbcDao implements ProductDao {
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setInt(1, product.getId());
             int row = preparedStatement.executeUpdate();
+            if (row == 1) return true;
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("Unable to delete Product");

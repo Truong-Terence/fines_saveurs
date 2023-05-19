@@ -72,7 +72,7 @@
 
             <div class="col-5 img-container">
                 <c:choose>
-                    <c:when test="${product.imageUrl.length() == 0}">
+                    <c:when test="${product.imageUrl == null || product.imageUrl.length() == 0}">
                         <img src="/images/placeholder.jpg" alt="">
                     </c:when>
                     <c:otherwise>
