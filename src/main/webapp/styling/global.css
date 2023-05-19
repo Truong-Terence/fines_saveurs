@@ -43,6 +43,10 @@ h1, h2, h3 {
     text-shadow: 1px 0px 0px rgba(252, 245, 237, 0.3);
 }
 
+a, a:hover {
+    color: var(--accent-color-dark);
+}
+
 .bg-beige {
     background: var(--grey-0);
 }
