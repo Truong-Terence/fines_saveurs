@@ -4,6 +4,8 @@ import com.example.fines_saveurs.dao.ProductJdbcDao;
 import com.example.fines_saveurs.model.Category;
 import com.example.fines_saveurs.model.Product;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductService {
@@ -39,8 +41,12 @@ public class ProductService {
 
     public List<Product> searchByKeywords(String keywords) {
         String[] keywordsArray = keywords.split(" ");
-        List<Product> posts = productDao.fetchByKeywords(keywordsArray);
-        return posts;
+        List<Product> products = new ArrayList<>();
+        for (String keyword : keywordsArray) {
+            List<Product> productsForKeyword = productDao.fetchByKeywords(keyword);
+            products.addAll(productsForKeyword);
+        }
+        return products;
     }
 
 }
