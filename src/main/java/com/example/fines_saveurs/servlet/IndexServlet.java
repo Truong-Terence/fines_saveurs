@@ -6,12 +6,17 @@ import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 
-@WebServlet(name = "IndexServlet", value = "/")
+@WebServlet(name = "IndexServlet", urlPatterns = {"/"})
 public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/home");
+        HttpSession session = request.getSession(false);
+        if (session != null && session.getAttribute("email") != null) {
+            response.sendRedirect("/secured/categories");
+        } else {
+            response.sendRedirect("/home");
+        }
     }
 
 }
