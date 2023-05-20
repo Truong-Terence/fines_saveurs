@@ -18,5 +18,4 @@ public class IndexServlet extends HttpServlet {
             response.sendRedirect("/home");
         }
     }
-
 }
