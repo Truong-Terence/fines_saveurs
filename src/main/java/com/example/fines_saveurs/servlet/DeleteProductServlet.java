@@ -20,8 +20,4 @@ public class  DeleteProductServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/secured/products");
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
 }
