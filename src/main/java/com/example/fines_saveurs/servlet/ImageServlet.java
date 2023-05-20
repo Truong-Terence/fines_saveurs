@@ -9,7 +9,7 @@ import jakarta.servlet.annotation.*;
 
 import java.io.*;
 
-@WebServlet(name = "ImageServlet", value = "/secured/image")
+@WebServlet(name = "ImageServlet", urlPatterns = {"/secured/image", "/image"})
 public class ImageServlet extends HttpServlet {
 
     private ImageService service = new ImageService();
