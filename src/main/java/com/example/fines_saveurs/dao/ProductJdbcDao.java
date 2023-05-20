@@ -223,4 +223,20 @@ public class ProductJdbcDao implements ProductDao {
         return products;
     }
 
+    public boolean updateImage(int productId, String filename) {
+        String query = "" +
+                "UPDATE flavour.product " +
+                "SET image_url = ? " +
+                "WHERE product.id = ?;";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setString(1, filename);
+            pst.setInt(2, productId);
+            int rows = pst.executeUpdate();
+            if (rows == 1) return true;
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return false;
+    }
+
 }

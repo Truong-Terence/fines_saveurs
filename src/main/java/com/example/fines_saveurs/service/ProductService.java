@@ -49,4 +49,8 @@ public class ProductService {
         return products;
     }
 
+    public boolean changeImage(int id, String filename) {
+        return productDao.updateImage(id, filename);
+    }
+
 }

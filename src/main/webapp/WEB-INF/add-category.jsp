@@ -6,7 +6,7 @@
     <%@include file="../styling/import-styles.jsp"%>
     <style>
         <%@include file="../styling/global.css"%>
-        <%@include file="../styling/add-product.css"%>
+        <%@include file="../styling/form.css"%>
     </style>
 </head>
 <body>
@@ -22,12 +22,12 @@
     <div class="container">
         <div class="row">
             <div class="col-6 mx-auto">
-                <form action="${pageContext.request.contextPath}add-category" method="post">
-                    <div class="mb-3">
+                <form action="${pageContext.request.contextPath}/secured/add-category" method="post">
+                    <div class="mb-3 d-flex align-items-center">
                         <label for="name" class="form-label">Nom de la catégorie</label>
                         <input type="text" class="form-control" id="name" name="name" placeholder="Libanais ..">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="block-center d-block mt-5 button">Soumettre</button>
                 </form>
             </div>
         </div>

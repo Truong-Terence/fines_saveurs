@@ -12,6 +12,7 @@
     <%@include file="../styling/import-styles.jsp"%>
     <style>
         <%@include file="../styling/global.css"%>
+        <%@include file="../styling/form.css"%>
     </style>
 </head>
 
@@ -22,7 +23,7 @@
 <div class="container py-5">
     <div class="row">
         <div class="col">
-            <h2 class="text-center">Edition du catégorie</h2>
+            <h2 class="text-center">Edition de la catégorie</h2>
         </div>
     </div>
 </div>
@@ -35,11 +36,11 @@
 
             <form action="${pageContext.request.contextPath}/secured/edit-category?id=${category.id}" method="post">
 
-                <div class="mb-3">
+                <div class="mb-3 d-flex align-items-center">
                     <label for="name" class="form-label">Nom du produit</label>
                     <input type="text" class="form-control" id="name" name="name" placeholder="Nom de la catégorie" required value="${category.name}">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="block-center d-block mt-5 button">Soumettre</button>
 
             </form>
 

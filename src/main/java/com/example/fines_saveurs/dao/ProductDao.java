@@ -8,5 +8,5 @@ import java.util.List;
 public interface ProductDao extends GenericDao<Product, Integer> {
 
     public List<Product> findByCategory(int categoryId);
-    boolean delete(Product entity);
+    public boolean updateImage(int productId, String filename);
 }

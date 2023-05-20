@@ -70,13 +70,16 @@
 
             </div>
 
-            <div class="col-5 img-container">
+            <div class="col-5 img-container position-relative p-0">
+                <a href="${pageContext.request.contextPath}/secured/edit-image?id=${product.id}">
+                    <img src="/images/bxs_camera.svg" alt="icone appareil photo" class="position-absolute icon">
+                </a>
                 <c:choose>
                     <c:when test="${product.imageUrl == null || product.imageUrl.length() == 0}">
-                        <img src="/images/placeholder.jpg" alt="">
+                        <img src="/images/placeholder.jpg" alt="photo du produit" class="product-img">
                     </c:when>
                     <c:otherwise>
-                        <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="">
+                        <img src="image?file=${pageContext.request.contextPath}${product.imageUrl}" alt="photo du produit" class="product-img">
                     </c:otherwise>
                 </c:choose>
             </div>
