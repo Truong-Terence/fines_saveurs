@@ -39,7 +39,7 @@
                   <%-- name --%>
                   <div class="mb-3">
                       <label for="product-name" class="form-label">Nom du produit *</label>
-                      <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit" required>
+                      <input type="text" class="form-control" id="product-name" name="product-name" required>
                   </div>
 
                   <%-- brand --%>
@@ -57,13 +57,13 @@
                   <%-- description --%>
                   <div class="mb-3">
                       <label for="description">Description</label>
-                      <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 100px" name="description"></textarea>
+                      <textarea class="form-control" id="description" style="height: 100px" name="description"></textarea>
                   </div>
 
                   <%-- ingredients --%>
                   <div class="mb-3">
                       <label for="ingredients">Ingrédients</label>
-                      <textarea class="form-control" placeholder="Leave a comment here" id="ingredients" style="height: 100px" name="ingredients"></textarea>
+                      <textarea class="form-control" id="ingredients" style="height: 100px" name="ingredients"></textarea>
                   </div>
 
 
@@ -87,7 +87,8 @@
 
                   <%-- Category --%>
                   <div class="mb-3">
-                      <select name="category" class="form-select" required>
+                      <label for="category" class="form-label">Catégorie *</label>
+                      <select name="category" class="form-select" id="category" required>
                           <option value="" disabled selected> Choisir une catégorie </option>
                           <c:forEach var="cat" items="${categories}">
                               <option value="${cat.id}"> ${cat.name} </option>
@@ -101,7 +102,7 @@
                       <input class="form-control" type="file" id="file-selector" accept="image/jpg, image/jpeg" name="file">
                   </div>
 
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="block-center d-block mt-5 button">Soumettre</button>
 
               </form>
 

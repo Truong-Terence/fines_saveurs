@@ -38,13 +38,13 @@
 
                 <%-- name --%>
                 <div class="mb-3">
-                    <label for="product-name" class="form-label">Nom du produit</label>
+                    <label for="product-name" class="form-label" required>Nom du produit *</label>
                     <input type="text" class="form-control" id="product-name" name="product-name" placeholder="Nom du produit" value="${product.name}">
                 </div>
 
                 <%-- brand --%>
                 <div class="mb-3">
-                    <label for="brand" class="form-label">Marque</label>
+                    <label for="brand" class="form-label" required>Marque *</label>
                     <input type="text" class="form-control" id="brand" name="brand" value="${product.brand}">
                 </div>
 
@@ -87,15 +87,15 @@
 
                 <%-- Category --%>
                 <div class="mb-3">
-                    <select name="category" class="form-select">
-                        <option value="" disabled selected> Choisir une catégorie </option>
+                    <label for="category" class="form-label">Catégorie *</label>
+                    <select name="category" id="category" class="form-select" required>
                         <c:forEach var="cat" items="${categories}">
                             <option value="${cat.id}" ${cat.id == product.category.id ? "selected" : ""}> ${cat.name} </option>
                         </c:forEach>
                     </select>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="block-center d-block mt-5 button">Soumettre</button>
 
             </form>
 
