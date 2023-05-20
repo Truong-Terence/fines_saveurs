@@ -15,7 +15,7 @@
     --grey-4: #5D5246;
     --font-serif: 'Lora', serif;
     --font-sans-serif: 'Open Sans', sans-serif;
-    --header-height: 80px;
+    --header-height: 60px;
 }
 
 * {
@@ -41,6 +41,10 @@ h1, h2, h3 {
     font-family: var(--font-serif);
     color: var(--primary-color-dark);
     text-shadow: 1px 0px 0px rgba(252, 245, 237, 0.3);
+}
+
+a, a:hover {
+    color: var(--accent-color-dark);
 }
 
 .bg-beige {

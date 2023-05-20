@@ -35,13 +35,14 @@
     </div>
 
     <div class="row">
-        <div class="col">
+        <div class="col d-flex align-items-center">
             <form action="${pageContext.request.contextPath}/secured/search" method="get">
                 <div class="mb-3 position-relative">
                     <input type="text" placeholder="Rechercher un produit" name="keywords" value="${keywords}" >
                     <input type="submit" class="position-absolute end-0" value="">
                 </div>
             </form>
+            <a href="${pageContext.request.contextPath}/secured/products" class="ms-4">Tout afficher</a>
         </div>
         <div class="col text-end">
             <a href="${pageContext.request.contextPath}/secured/add-product" class="ms-auto">
