@@ -12,7 +12,7 @@
   <%@include file="../styling/import-styles.jsp"%>
   <style>
     <%@include file="../styling/global.css"%>
-    <%@include file="../styling/add-product.css"%>
+    <%@include file="../styling/form.css"%>
   </style>
 </head>
 
