@@ -22,8 +22,4 @@ public class DeleteCategoryServlet extends HttpServlet {
         response.sendRedirect(request.getContextPath() + "/secured/categories");
     }
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
 }

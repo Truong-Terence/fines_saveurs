@@ -96,11 +96,9 @@
                             </a>
                         </div>
                         <div class="col">
-                            <form method="get" action="${pageContext.request.contextPath}delete-product">
-                                <input type="hidden" name="id" value="${product.id}">
-                                <input type="hidden" name="_method" value="DELETE">
+                            <a href="${pageContext.request.contextPath}/secured/delete-product?id=${product.id}&name=${product.name}">
                                 <button class="button d-block ms-auto my-5" type="submit">Supprimer</button>
-                            </form>
+                            </a>
                         </div>
                     </div>
                 </div>
