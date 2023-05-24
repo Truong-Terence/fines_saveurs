@@ -13,8 +13,21 @@ public class AdminJdbcDao implements AdminDao {
     private final Connection connection = DataBase.getConnection();
 
     @Override
-    public boolean create(Admin entity) {
-        throw new RuntimeException();
+    public boolean create(Admin admin) {
+        String query = "INSERT INTO flavour.admin (email, firstname, lastname, password) VALUES (?,?,?,?);";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setString(1, admin.getEmail());
+            pst.setString(2, admin.getFirstname());
+            pst.setString(3, admin.getLastname());
+            pst.setString(4, admin.getPassword());
+            int row = pst.executeUpdate();
+            if (row == 1) {
+                return true;
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return false;
     }
     @Override
     public Admin findById(Long aLong) {

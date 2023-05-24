@@ -71,14 +71,14 @@
                         </div>
                     </div>
                     <div class="col-right">
-                        <c:choose>
-                            <c:when test="${prod.imageUrl == null || prod.imageUrl.length() == 0}">
-                                <img src="/images/placeholder.jpg" alt="">
-                            </c:when>
-                            <c:otherwise>
-                                <img src="image?file=${pageContext.request.contextPath}${prod.imageUrl}" alt="">
-                            </c:otherwise>
-                        </c:choose>
+                            <c:choose>
+                                <c:when test="${prod.imageUrl == null || prod.imageUrl.length() == 0}">
+                                    <img src="/images/placeholder.jpg" alt="">
+                                </c:when>
+                                <c:otherwise>
+                                    <img src="image?file=${pageContext.request.contextPath}${prod.imageUrl}" alt="">
+                                </c:otherwise>
+                            </c:choose>
                     </div>
                 </div>
 
