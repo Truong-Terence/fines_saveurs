@@ -13,14 +13,6 @@ public class Admin {
     private String lastname;
     private Boolean status = false;
 
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
-    }
-
     public Admin(Long id, String email, String password, String firstname, String lastname) {
         this.id = id;
         this.email = email ;
@@ -29,13 +21,20 @@ public class Admin {
         this.lastname = lastname;
 
     }
+
+    public Admin(Long id, String email, String password, Boolean status) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.status = status;
+    }
+
     public Admin(String email, String password, String firstname, String lastname) {
         this.email = email ;
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
     }
-
     public Admin(Long id, String email, String password) {
         this.id = id;
         this.email = email ;
@@ -50,10 +49,10 @@ public class Admin {
     public Admin(){
 
     }
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -88,5 +87,17 @@ public class Admin {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public boolean IsAdminSuper() {
+        return this.status;
     }
 }

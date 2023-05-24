@@ -6,6 +6,8 @@ import com.example.fines_saveurs.dao.ProductJdbcDao;
 import com.example.fines_saveurs.model.Admin;
 import com.example.fines_saveurs.model.Category;
 import com.example.fines_saveurs.model.Product;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.util.List;
 
@@ -27,5 +29,24 @@ public class AdminService {
 
     public List<Admin> fetchAllAdmins() {
         return adminDao.findAll();
+    }
+
+    public Admin getAdminByEmail(String email) { return adminDao.findByEmail(email);}
+
+
+    public Admin getActualAdmin(HttpServletRequest request) {
+        HttpSession session = request.getSession(false);
+
+        if (session != null) {
+            Admin actualAdmin = (Admin) session.getAttribute("admin");
+            Boolean status = (Boolean) session.getAttribute("status");
+
+            if (actualAdmin != null && status != null) {
+                actualAdmin.setStatus(status);
+            }
+
+            return actualAdmin;
+        }
+        return null;
     }
 }

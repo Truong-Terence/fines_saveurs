@@ -30,3 +30,5 @@ public class AuthenticationFilter extends HttpFilter {
         }
     }
 }
+
+//TODO: bloquer le passage au mecs pas supers
