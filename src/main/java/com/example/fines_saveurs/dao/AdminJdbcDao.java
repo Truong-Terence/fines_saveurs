@@ -14,12 +14,13 @@ public class AdminJdbcDao implements AdminDao {
 
     @Override
     public boolean create(Admin admin) {
-        String query = "INSERT INTO flavour.admin (email, firstname, lastname, password) VALUES (?,?,?,?);";
+        String query = "INSERT INTO flavour.admin (email, firstname, lastname, password, status) VALUES (?,?,?,?,?);";
         try (PreparedStatement pst = connection.prepareStatement(query)) {
             pst.setString(1, admin.getEmail());
             pst.setString(2, admin.getFirstname());
             pst.setString(3, admin.getLastname());
             pst.setString(4, admin.getPassword());
+            pst.setBoolean(5, admin.getStatus());
             int row = pst.executeUpdate();
             if (row == 1) {
                 return true;
@@ -56,7 +57,6 @@ public class AdminJdbcDao implements AdminDao {
             if (result.next()) {
                 adminFound = new Admin(
                         result.getLong("id"),
-
                         result.getString("email"),
                         result.getString("password")
                 );
@@ -77,7 +77,9 @@ public class AdminJdbcDao implements AdminDao {
                 Long id = result.getLong("id");
                 String email = result.getString("email");
                 String password = result.getString("password");
-                admins.add(new Admin(id, email, password));
+                String firstname = result.getString("firstname");
+                String lastname = result.getString("lastname");
+                admins.add(new Admin(id, email, password, firstname, lastname));
             }
         } catch (SQLException error) {
             error.printStackTrace();

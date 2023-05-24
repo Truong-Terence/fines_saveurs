@@ -25,10 +25,9 @@ public class AddAdminServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
+        String password = request.getParameter("password");
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
-        String password = request.getParameter("password");
-
 
         try {
             AdminService adminService= new AdminService();

@@ -1,5 +1,8 @@
 package com.example.fines_saveurs.model;
 
+import jakarta.ws.rs.DefaultValue;
+import jakarta.ws.rs.QueryParam;
+
 public class Admin {
     private Long id;
 
@@ -8,6 +11,15 @@ public class Admin {
     private String password;
     private String firstname;
     private String lastname;
+    private Boolean status = false;
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public Admin(Long id, String email, String password, String firstname, String lastname) {
         this.id = id;
@@ -15,6 +27,7 @@ public class Admin {
         this.password = password;
         this.firstname = firstname;
         this.lastname = lastname;
+
     }
     public Admin(String email, String password, String firstname, String lastname) {
         this.email = email ;
