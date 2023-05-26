@@ -7,6 +7,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
+import jakarta.ws.rs.core.Response;
 
 import java.util.List;
 
@@ -16,7 +17,10 @@ public class AdminResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Admin> getAllAdmins() {
-        return adminDao.findAll();
+    public Response getAllAdmins() {
+        List<Admin> adminList = adminDao.findAll();
+        return Response
+                .ok(adminList)
+                .build();
     }
 }
