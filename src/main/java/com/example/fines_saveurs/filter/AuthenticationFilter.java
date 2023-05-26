@@ -26,7 +26,7 @@ public class AuthenticationFilter extends HttpFilter {
         if (session != null && session.getAttribute("email") != null) {
             chain.doFilter(req, res);
         } else {
-            if (request.getRequestURI().contains(request.getContextPath() + "/webapi") || (request.getRequestURI().contains(request.getContextPath() + "/home")) || (request.getRequestURI().contains(request.getContextPath() + "/login")) ) {
+            if (request.getRequestURI().contains(request.getContextPath() + "/webapi") || (request.getRequestURI().contains(request.getContextPath() + "/home")) || (request.getRequestURI().contains(request.getContextPath() + "/login")) || (request.getRequestURI().contains(request.getContextPath() + "/image")) ) {
                 ((HttpServletResponse) res).addHeader("Access-Control-Allow-Origin", "http://localhost:9090");
                 ((HttpServletResponse) res).addHeader("Access-Control-Allow-Methods", "POST, GET");
                 ((HttpServletResponse) res).addHeader("Access-Control-Allow-Headers", "Content-Type");
