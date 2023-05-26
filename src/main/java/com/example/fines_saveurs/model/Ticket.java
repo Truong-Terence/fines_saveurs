@@ -14,6 +14,10 @@ public class Ticket {
         this.textInput = textInput;
     }
 
+    public Ticket(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }

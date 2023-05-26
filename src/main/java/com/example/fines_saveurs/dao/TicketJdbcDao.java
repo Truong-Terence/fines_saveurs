@@ -63,7 +63,15 @@ public class TicketJdbcDao implements TicketDao{
     }
 
     @Override
-    public boolean delete(Ticket entity) {
+    public boolean delete(Ticket ticket) {
+        String query = "DELETE FROM ticket WHERE id=?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, Math.toIntExact(ticket.getId()));
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Impossible de supprimer le ticket");
+        }
         return false;
     }
 }

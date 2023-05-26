@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("email", email);
 
             Admin actualAdmin = adminService.getAdminByEmail(email);
+            session.setAttribute("actualAdmin", actualAdmin);
 
             if (actualAdmin != null && actualAdmin.getStatus()) {
                 session.setAttribute("admin", actualAdmin);

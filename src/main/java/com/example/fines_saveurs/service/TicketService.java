@@ -2,7 +2,6 @@ package com.example.fines_saveurs.service;
 import com.example.fines_saveurs.dao.TicketJdbcDao;
 import com.example.fines_saveurs.model.Ticket;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TicketService {
@@ -16,5 +15,9 @@ public class TicketService {
 
     public List<Ticket> fetchAllTickets() {
         return ticketDao.findAll();
+    }
+
+    public boolean deleteTicket(int id) {
+        return ticketDao.delete(new Ticket((long) id));
     }
 }

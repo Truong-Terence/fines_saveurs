@@ -36,6 +36,9 @@
                                         <li class="nav-item ms-3" id="products-li">
                                             <a class="nav-link" href="${pageContext.request.contextPath}/secured/products">Produits</a>
                                         </li>
+                                        <li class="nav-item ms-3" id="ticket-li">
+                                            <a class="nav-link" href="${pageContext.request.contextPath}/secured/tickets">Tickets</a>
+                                        </li>
                                         <li class="nav-item ms-3" id="logout-li">
                                             <a href="${pageContext.request.contextPath}/logout" class="underline-none">
                                                 <button class="button-outline d-block ms-5 my-0">Se d&eacute;connecter</button>

@@ -3,24 +3,33 @@
 <html>
 <head>
     <title>Title</title>
+        <%@include file="../styling/import-styles.jsp"%>
+    <style>
+        <%@include file="../styling/global.css"%>
+    </style>
 </head>
 <body>
-<h1>Tickets</h1>
-<table>
-    <tr>
-        <th>Ticket ID</th>
-        <th>User Email</th>
-        <th>Text Input</th>
-        <th>Admin</th>
-    </tr>
-    <c:forEach var="ticket" items="${tickets}">
+<c:import url="header.jsp"/>
+<div class="container">
+    <h1>Tickets</h1>
+    <table class="table table-striped">
         <tr>
-            <td>${ticket.id}</td>
-            <td>${ticket.userEmail}</td>
-            <td>${ticket.textInput}</td>
-            <td>${ticket.adminId}</td>
+            <th scope="col">#</th>
+            <th scope="col">Email client</th>
+            <th scope="col">Message</th>
+            <th scope="col">Archiver</th>
         </tr>
-    </c:forEach>
-</table>
+        <c:forEach var="ticket" items="${tickets}">
+            <tr>
+                <c:if test="${actualAdminId == ticket.adminId}">
+                    <td>${ticket.id}</td>
+                    <td>${ticket.userEmail}</td>
+                    <td>${ticket.textInput}</td>
+                    <td><a href="${pageContext.request.contextPath}/secured/delete-ticket?id=${ticket.id}"><button class="button d-block" type="submit">Supprimer</button></a></td>
+                </c:if>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 </body>
 </html>
