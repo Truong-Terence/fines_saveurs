@@ -30,8 +30,6 @@ public class AddAdminServlet extends HttpServlet {
         HttpSession session = request.getSession();
         AdminService adminService = new AdminService();
         Admin actualAdmin = adminService.getAdminByEmail((String) session.getAttribute("email"));
-        System.out.println(actualAdmin);
-        System.out.println(actualAdmin.getStatus());
         if (actualAdmin != null  && actualAdmin.getStatus()) {
 
         String email = request.getParameter("email");
@@ -51,8 +49,6 @@ public class AddAdminServlet extends HttpServlet {
             response.sendRedirect("/secured/admins");
             return;
         }
-        System.out.println("AddAdminServlet - actualAdmin: " + actualAdmin);
-
         response.sendRedirect("/secured/admins");
     }
 }
