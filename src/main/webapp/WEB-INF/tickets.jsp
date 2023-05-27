@@ -6,9 +6,10 @@
         <%@include file="../styling/import-styles.jsp"%>
     <style>
         <%@include file="../styling/global.css"%>
+        <%@include file="../styling/tickets.css"%>
     </style>
 </head>
-<body>
+<body id="tickets">
 <c:import url="header.jsp"/>
 <div class="container">
     <h1>Tickets</h1>

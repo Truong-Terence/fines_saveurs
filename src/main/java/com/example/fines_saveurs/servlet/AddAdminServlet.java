@@ -41,7 +41,7 @@ public class AddAdminServlet extends HttpServlet {
 
 
             try {
-                adminService.addAdmin(email, firstname, lastname, password);
+                adminService.addAdmin(email, password, firstname, lastname);
                 response.sendRedirect("/secured/admins");
                 return;
             } catch (NumberFormatException e) {

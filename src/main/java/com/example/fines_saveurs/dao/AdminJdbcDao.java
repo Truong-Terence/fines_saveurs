@@ -123,4 +123,26 @@ public class AdminJdbcDao implements AdminDao {
         }
         return admins;
     }
+
+
+    public List<Admin> fetchEmptyAdmins() {
+        String query = "SELECT a.id, t.admin_id " +
+                "FROM flavour.admin a " +
+                "LEFT OUTER JOIN flavour.ticket t " +
+                "ON a.id = t.admin_id " +
+                "WHERE t.admin_id IS NULL; ";
+        List<Admin> list = new ArrayList<>();
+        try (Statement statement = connection.createStatement()) {
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+                Admin admin = new Admin();
+                admin.setId((long) result.getInt(1));
+                list.add(admin);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 }
