@@ -19,16 +19,27 @@
 <body id="admins">
 
 
+
 <div class="container">
     <c:import url="header.jsp"/>
-    <table class="table">
+
+
+    <c:url value="/secured/add-admin" var="addAdmin" />
+    <a href="${addAdmin}">Ajouter</a>
+
+
+
+    <table class="table table-striped">
         <thead>
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">Firstname</th>
-            <th scope="col">Lastname</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
             <th scope="col">Email</th>
-            <th scope="col">Password</th>
+            <th scope="col">Mdp</th>
+            <th scope="col">SuperAdmin</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -39,6 +50,22 @@
                 <td>${admin.lastname}</td>
                 <td>${admin.email}</td>
                 <td>${admin.password}</td>
+                <td>
+                    <c:choose>
+                        <c:when test="${admin.status}">
+                            Actif
+                        </c:when>
+                        <c:otherwise>
+                            Inactif
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/secured/edit-admin?id=${admin.id}"><button class="button" type="submit">Editer</button></a></td>
+                </td>
+                <td>
+                    <a href="${pageContext.request.contextPath}/secured/delete-admin?id=${admin.id}"><button class="button" type="submit">Supprimer</button></a></td>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

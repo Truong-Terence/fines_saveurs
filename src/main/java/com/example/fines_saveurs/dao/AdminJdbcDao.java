@@ -31,18 +31,53 @@ public class AdminJdbcDao implements AdminDao {
         return false;
     }
     @Override
-    public Admin findById(Long aLong) {
-        throw new RuntimeException();
+    public Admin findById(Long id) {
+        Admin admin = new Admin();
+        String query = "SELECT * FROM flavour.admin WHERE id=?";
+        try (PreparedStatement pst = connection.prepareStatement(query)) {
+            pst.setLong(1, id);
+            ResultSet result = pst.executeQuery();
+            if (result.next()) {
+                admin.setId((long) result.getInt("id"));
+                admin.setFirstname(result.getString("firstname"));
+                admin.setLastname(result.getString("lastname"));
+                admin.setEmail(result.getString("email"));
+                admin.setPassword(result.getString("password"));
+                admin.setStatus(result.getBoolean("status"));
+            }
+        } catch (SQLException error) {
+            error.printStackTrace();
+        }
+        return admin;
     }
 
     @Override
-    public void update(Admin entity) {
-        throw new RuntimeException();
+    public void update(Admin admin) {
+        String query = "UPDATE admin SET firstname=?, lastname=?, email=?, password=?, status=? WHERE id=?";
+        try (PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, admin.getFirstname());
+            statement.setString(2, admin.getLastname());
+            statement.setString(3, admin.getEmail());
+            statement.setString(4, admin.getPassword());
+            statement.setBoolean(5, admin.getStatus());
+            statement.setLong(6, admin.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating admin", e);
+        }
     }
 
     @Override
-    public boolean delete(Admin entity) {
-        throw new RuntimeException();
+    public boolean delete(Admin admin) {
+        String query = "DELETE FROM admin WHERE id=?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+            preparedStatement.setInt(1, Math.toIntExact(admin.getId()));
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Impossible de supprimer l'administrateur");
+        }
+        return false;
     }
 
     @Override
@@ -80,7 +115,8 @@ public class AdminJdbcDao implements AdminDao {
                 String password = result.getString("password");
                 String firstname = result.getString("firstname");
                 String lastname = result.getString("lastname");
-                admins.add(new Admin(id, email, password, firstname, lastname));
+                Boolean status = result.getBoolean("status");
+                admins.add(new Admin(id, email, password, firstname, lastname, status));
             }
         } catch (SQLException error) {
             error.printStackTrace();
