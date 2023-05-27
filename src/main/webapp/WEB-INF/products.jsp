@@ -89,7 +89,10 @@
 </div>
 
 <script>
-    if (document.getElementsByClassName("product-card").length > 0) {
+    if (
+        document.getElementsByClassName("product-card").length > 0 ||
+        document.querySelector("input[type='text']").value.length === 0
+    ) {
         document.getElementById("no-result").style.display = "none";
     }
 
@@ -101,7 +104,6 @@
     document
         .querySelector('input[name="keywords"]')
         .addEventListener("click", handleClick);
-
 </script>
 
 </body>

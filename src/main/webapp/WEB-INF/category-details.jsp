@@ -54,7 +54,7 @@
                                 <button class="button d-block my-5">Éditer</button>
                             </a>
                         </div>
-<%--                        TODO: if category has product, hide delete--%>
+
                         <div class="col">
                             <form method="POST" action="${pageContext.request.contextPath}delete-category">
                                 <input type="hidden" name="id" value="${category.id}">
