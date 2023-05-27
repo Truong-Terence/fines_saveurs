@@ -49,7 +49,6 @@ public class AdminService {
             if (actualAdmin != null && status != null) {
                 actualAdmin.setStatus(status);
             }
-
             return actualAdmin;
         }
         return null;
@@ -61,5 +60,9 @@ public class AdminService {
 
     public boolean deleteAdmin(long id) {
         return adminDao.delete(new Admin(id));
+    }
+
+    public List<Admin> fetchEmptyAdmins() {
+        return adminDao.fetchEmptyAdmins();
     }
 }
