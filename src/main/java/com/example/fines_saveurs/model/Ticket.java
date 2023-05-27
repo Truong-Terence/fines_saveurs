@@ -1,6 +1,6 @@
 package com.example.fines_saveurs.model;
 public class Ticket {
-    private Long id;
+    private long id;
     private String userEmail;
     private int adminId;
     private String textInput;

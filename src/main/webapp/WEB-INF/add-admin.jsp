@@ -38,14 +38,14 @@
 
                 <%-- firstname --%>
                 <div class="mb-3">
-                    <label for="firstname" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname">
+                    <label for="firstname" class="form-label">Prénom *</label>
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
                 </div>
 
                 <%-- lastname --%>
                 <div class="mb-3">
-                    <label for="lastname" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname">
+                    <label for="lastname" class="form-label">Nom *</label>
+                    <input type="text" class="form-control" id="lastname" name="lastname" required>
                 </div>
 
                 <%-- email --%>

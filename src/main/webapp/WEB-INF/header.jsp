@@ -36,6 +36,11 @@
                                         <li class="nav-item ms-3" id="products-li">
                                             <a class="nav-link" href="${pageContext.request.contextPath}/secured/products">Produits</a>
                                         </li>
+                                        <c:if test="${sessionScope.actualAdminStatus}">
+                                            <li class="nav-item ms-3" id="admin-li">
+                                                <a class="nav-link" href="${pageContext.request.contextPath}/secured/admins">Admins</a>
+                                            </li>
+                                        </c:if>
                                         <li class="nav-item ms-3" id="ticket-li">
                                             <a class="nav-link" href="${pageContext.request.contextPath}/secured/tickets">Tickets</a>
                                         </li>

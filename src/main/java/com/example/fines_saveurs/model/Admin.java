@@ -4,23 +4,14 @@ import jakarta.ws.rs.DefaultValue;
 import jakarta.ws.rs.QueryParam;
 
 public class Admin {
-    private Long id;
+    private long id;
 
     private String email;
 
     private String password;
     private String firstname;
     private String lastname;
-    private Boolean status = false;
-
-    public Admin(Long id, String email, String password, String firstname, String lastname) {
-        this.id = id;
-        this.email = email ;
-        this.password = password;
-        this.firstname = firstname;
-        this.lastname = lastname;
-
-    }
+    private boolean status;
 
     public Admin(Long id, String email, String password, Boolean status) {
         this.id = id;
@@ -35,19 +26,22 @@ public class Admin {
         this.firstname = firstname;
         this.lastname = lastname;
     }
-    public Admin(Long id, String email, String password) {
+
+    public Admin(Long id, String email, String password, String firstname, String lastname, Boolean status) {
         this.id = id;
-        this.email = email ;
+        this.email = email;
         this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.status = status;
     }
 
-    public Admin(String email, String password) {
-        this.email = email ;
-        this.password = password;
+    public Admin() {
+        
     }
 
-    public Admin(){
-
+    public Admin(long id) {
+        this.id = id;
     }
 
     public Long getId() {
@@ -95,6 +89,18 @@ public class Admin {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Admin{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", status=" + status +
+                '}';
     }
 
     public boolean IsAdminSuper() {
