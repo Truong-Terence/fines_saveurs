@@ -131,4 +131,24 @@ public class CategoryJdbcDao implements CategoryDao{
         return list;
     }
 
+    public List<Category> fetchNotEmptyCategories() {
+        String query = "SELECT DISTINCT c.id, c.name " +
+                "FROM flavour.category c " +
+                "INNER JOIN flavour.product p " +
+                "ON c.id = p.id_category;";
+        List<Category> list = new ArrayList<>();
+        try (Statement statement = connection.createStatement()) {
+            ResultSet result = statement.executeQuery(query);
+            while (result.next()) {
+                Category category = new Category();
+                category.setId(result.getInt(1));
+                category.setName(result.getString(2));
+                list.add(category);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
 }
