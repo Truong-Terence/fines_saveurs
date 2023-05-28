@@ -13,7 +13,14 @@ import jakarta.servlet.http.HttpSession;
 import java.util.List;
 
 public class AdminService {
-    private final AdminJdbcDao adminDao = new AdminJdbcDao();
+    private final AdminDao adminDao;
+
+    public AdminService() {
+        adminDao = new AdminJdbcDao();
+    }
+    public AdminService(AdminDao adminDao) {
+        this.adminDao = adminDao;
+    }
 
     public boolean login(String email, String password) {
         Admin adminFound = adminDao.findByEmail(email);
@@ -37,22 +44,6 @@ public class AdminService {
     }
 
     public Admin getAdminByEmail(String email) { return adminDao.findByEmail(email);}
-
-
-    public Admin getActualAdmin(HttpServletRequest request) {
-        HttpSession session = request.getSession(false);
-
-        if (session != null) {
-            Admin actualAdmin = (Admin) session.getAttribute("admin");
-            Boolean status = (Boolean) session.getAttribute("status");
-
-            if (actualAdmin != null && status != null) {
-                actualAdmin.setStatus(status);
-            }
-            return actualAdmin;
-        }
-        return null;
-    }
 
     public void updateAdmin(Admin admin) {
         adminDao.update(admin);

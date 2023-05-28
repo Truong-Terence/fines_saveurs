@@ -9,7 +9,15 @@ import java.util.List;
 
 public class CategoryService {
 
-    private final CategoryJdbcDao categoryDao = new CategoryJdbcDao();
+    private CategoryDao categoryDao;
+
+    public CategoryService() {
+        categoryDao = new CategoryJdbcDao();
+    }
+
+    public CategoryService(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
+    }
 
     public boolean addCategory(String name) {
         Category newCategory = new Category(name);

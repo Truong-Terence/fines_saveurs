@@ -18,6 +18,13 @@ public class Ticket {
         this.id = id;
     }
 
+    public Ticket(long id, String userEmail, int adminId, String textInput) {
+        this.id = id;
+        this.userEmail = userEmail;
+        this.adminId = adminId;
+        this.textInput = textInput;
+    }
+
     public Long getId() {
         return id;
     }

@@ -7,4 +7,5 @@ import java.util.List;
 public interface AdminDao extends GenericDao <Admin, Long> {
     Admin findByEmail(String email);
 
+    List<Admin> fetchEmptyAdmins();
 }

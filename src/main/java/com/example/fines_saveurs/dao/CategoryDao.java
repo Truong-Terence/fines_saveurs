@@ -20,4 +20,6 @@ public interface CategoryDao extends GenericDao<Category, Integer> {
 
     boolean delete(Category entity);
 
+
+    List<Category> fetchEmptyCategories();
 }

@@ -9,4 +9,6 @@ public interface ProductDao extends GenericDao<Product, Integer> {
 
     public List<Product> findByCategory(int categoryId);
     public boolean updateImage(int productId, String filename);
+
+    List<Product> fetchByKeywords(String keyword);
 }
