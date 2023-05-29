@@ -99,7 +99,7 @@
                             </a>
                         </div>
                         <div class="col">
-                            <a href="${pageContext.request.contextPath}/secured/delete-product?id=${product.id}&name=${product.name}">
+                            <a href="${pageContext.request.contextPath}/secured/delete-product?id=${product.id}&name=${product.name}" class="underline-none">
                                 <button class="button d-block ms-auto my-5" type="submit">Supprimer</button>
                             </a>
                         </div>
