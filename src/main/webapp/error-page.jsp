@@ -7,7 +7,10 @@
 <body>
     <div class="bg">
         <div class="caption">
-            <span class="border">Erreur 404</span>
+            <span class="border">Ooops !</span>
+            <br>
+            <br>
+            <span class="border">Requête non disponible</span>
         </div>
     </div>
 </body>
