@@ -2,7 +2,10 @@
 <html>
 <head>
     <title>Title</title>
-    <style><%@include file="./styling/error.css"%></style>
+    <style>
+        <%@include file="./styling/error.css"%>
+    </style>
+
 </head>
 <body>
     <div class="bg">
@@ -11,6 +14,9 @@
             <br>
             <br>
             <span class="border">Requête non disponible</span>
+        </div>
+        <div class="back-to-home">
+            <a href="/secured/categories"><button class="block-center d-block mt-5 button">Retourner au chaud</button></a>
         </div>
     </div>
 </body>
