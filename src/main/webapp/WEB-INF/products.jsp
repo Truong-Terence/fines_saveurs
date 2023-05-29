@@ -82,6 +82,7 @@
 
         </c:forEach>
     </div>
+    </div>
 </div>
 
 <script>
