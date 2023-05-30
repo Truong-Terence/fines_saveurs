@@ -11,3 +11,5 @@
 - se déconnecter
 - ajouter/supprimer des produits
 - ajouter/supprimer des catégories de produits
+
+ # [fines_saveurs_fo](https://github.com/MarieChanaron/fines_saveurs_fo)
