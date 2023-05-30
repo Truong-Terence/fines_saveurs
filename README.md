@@ -1,7 +1,13 @@
 ﻿# fines_saveurs_bo
 
 ## BDD credentials :
-- Copy file src/main/resources/appToComplete.properties.
-- Rename the appToComplete.properties copy to app.properties.
-- Fill this app.properties file with your own credentials.
-- 
+- Copier le fichier src/main/resources/appToComplete.properties.
+- Renommer appToComplete.properties et copier le contrnu dans app.properties.
+- Remplir app.properties avec vos propres credentials.
+
+## Ojbectifs : 
+- Back Office (Administrateurs) => Jakarta EE (Tomcat 10 - Servlet - JSP - Expression Language - Mysql)
+- se connecter
+- se déconnecter
+- ajouter/supprimer des produits
+- ajouter/supprimer des catégories de produits
