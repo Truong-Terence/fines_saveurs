@@ -26,4 +26,20 @@
             <url-pattern>/webapi/*</url-pattern>
         </servlet-mapping>
 
+        <!-- COOKIES -->
+        <session-config>
+            <cookie-config>
+                <name>MY_JSESSIONID_BO</name>
+            </cookie-config>
+        </session-config>
+
+        <!-- ERRORS -->
+        <error-page>
+            <exception-type>java.lang.RuntimeException</exception-type>
+            <location>/error-page.jsp</location>
+        </error-page>
+        <error-page>
+            <error-code>404</error-code>
+            <location>/error-page.jsp</location>
+        </error-page>
 </web-app>

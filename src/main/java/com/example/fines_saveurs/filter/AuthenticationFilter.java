@@ -13,20 +13,28 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 
 
-@WebFilter(urlPatterns = {"/secured/*"})
+@WebFilter(urlPatterns = {"/*"})
 public class AuthenticationFilter extends HttpFilter {
 
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 
+        HttpServletResponse response = (HttpServletResponse) res;
         HttpServletRequest request = (HttpServletRequest) req;
         HttpSession session = request.getSession(false);
 
         if (session != null && session.getAttribute("email") != null) {
             chain.doFilter(req, res);
         } else {
-            HttpServletResponse response = (HttpServletResponse) res;
-            response.sendRedirect("/home");
+            if (request.getRequestURI().contains(request.getContextPath() + "/webapi") || (request.getRequestURI().contains(request.getContextPath() + "/home")) || (request.getRequestURI().contains(request.getContextPath() + "/login")) || (request.getRequestURI().contains(request.getContextPath() + "/image")) ) {
+                ((HttpServletResponse) res).addHeader("Access-Control-Allow-Origin", "http://localhost:9090");
+                ((HttpServletResponse) res).addHeader("Access-Control-Allow-Methods", "POST, GET");
+                ((HttpServletResponse) res).addHeader("Access-Control-Allow-Headers", "Content-Type");
+
+                chain.doFilter(req, res);
+            } else {
+                response.sendRedirect("/home");
+            }
         }
     }
 }

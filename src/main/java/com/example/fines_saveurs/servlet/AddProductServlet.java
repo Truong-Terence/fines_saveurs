@@ -50,8 +50,7 @@ public class AddProductServlet extends HttpServlet {
         String description = request.getParameter("description");
         String ingredients = request.getParameter("ingredients");
 
-        String conditioning = DataHandler.parseParam(
-                request.getParameter("conditioning"), String.class);
+        String conditioning = request.getParameter("conditioning");
 
         String origin = request.getParameter("origin");
 

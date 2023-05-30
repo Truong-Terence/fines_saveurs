@@ -53,43 +53,43 @@
 
     <div class="row my-5 pb-5">
         <div class="col pb-5" id="grid-products">
+        <p id="no-result">Votre recherche n'a produit aucun résultat.</p>
+        <c:forEach var="prod" items="${products}">
 
-            <p id="no-result">Votre recherche n'a produit aucun résultat.</p>
-
-            <c:forEach var="prod" items="${products}">
-
-                <div class="product-card overflow-hidden">
-                    <div class="col-left">
-                        <p class="uppercase bold small"> ${prod.name} </p>
-                        <p class="bold"> ${prod.brand} </p>
-                        <p> Ref. ${prod.reference} </p>
-                        <p> ${prod.price} €</p>
-                        <p class="conditioning"> ${prod.conditioning} </p>
-                        <div class="aligned">
-                            <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details?id=${prod.id}" class="underline-none uppercase bold smaller text-white">Détails</a></p>
-                            <p class="mb-0">Stock : ${prod.stock} </p>
-                        </div>
-                    </div>
-                    <div class="col-right">
-                        <c:choose>
-                            <c:when test="${prod.imageUrl == null || prod.imageUrl.length() == 0}">
-                                <img src="/images/placeholder.jpg" alt="">
-                            </c:when>
-                            <c:otherwise>
-                                <img src="image?file=${pageContext.request.contextPath}${prod.imageUrl}" alt="">
-                            </c:otherwise>
-                        </c:choose>
+            <div class="product-card overflow-hidden">
+                <div class="col-left">
+                    <p class="uppercase bold small"> ${prod.name} </p>
+                    <p class="bold"> ${prod.brand} </p>
+                    <p> Ref. ${prod.reference} </p>
+                    <p> ${prod.price} €</p>
+                    <p class="conditioning"> ${prod.conditioning} </p>
+                    <div class="aligned">
+                        <p class="mb-0"><a href="${pageContext.request.contextPath}/secured/product-details?id=${prod.id}" class="underline-none uppercase bold smaller text-white">Détails</a></p>
+                        <p class="mb-0">Stock : ${prod.stock} </p>
                     </div>
                 </div>
+                <div class="col-right">
+                    <c:choose>
+                        <c:when test="${prod.imageUrl == null || prod.imageUrl.length() == 0}">
+                            <img src="/images/placeholder.jpg" alt="">
+                        </c:when>
+                        <c:otherwise>
+                            <img src="image?file=${pageContext.request.contextPath}${prod.imageUrl}" alt="">
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
 
-            </c:forEach>
-
-        </div>
+        </c:forEach>
+    </div>
     </div>
 </div>
 
 <script>
-    if (document.getElementsByClassName("product-card").length > 0) {
+    if (
+        document.getElementsByClassName("product-card").length > 0 ||
+        document.querySelector("input[type='text']").value.length === 0
+    ) {
         document.getElementById("no-result").style.display = "none";
     }
 
@@ -101,7 +101,6 @@
     document
         .querySelector('input[name="keywords"]')
         .addEventListener("click", handleClick);
-
 </script>
 
 </body>

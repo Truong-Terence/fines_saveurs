@@ -1,5 +1,6 @@
 package com.example.fines_saveurs.servlet;
 
+import com.example.fines_saveurs.model.Admin;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -22,6 +23,16 @@ public class LoginServlet extends HttpServlet {
         if (isLogged) {
             HttpSession session = req.getSession();
             session.setAttribute("email", email);
+
+            Admin actualAdmin = adminService.getAdminByEmail(email);
+            session.setAttribute("actualAdmin", actualAdmin);
+            session.setAttribute("actualAdminStatus", actualAdmin.getStatus());
+
+
+            if (actualAdmin != null && actualAdmin.getStatus()) {
+                session.setAttribute("admin", actualAdmin);
+                session.setAttribute("status", actualAdmin.getStatus());
+            }
             resp.sendRedirect("/secured/categories");
         } else {
             req.setAttribute("login_error", true);
